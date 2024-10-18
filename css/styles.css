@@ -1,105 +1,72 @@
-/* General Reset */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply the Jua font to the whole page */
 body {
     font-family: 'Jua', sans-serif;
 }
 
 /* Navbar Styling */
 .navbar {
-    background-color: #FFFFE0; /* Soft yellow color */
+    background-color: #FFFFE0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 90px;
-    font-family: 'Jua', sans-serif;
+    padding: 24px 40px;
     position: relative;
-    border-bottom: 2px solid #C3B091; /* Line below navbar */
+    border-bottom: 2px solid #000000;
+    font-size: 20px;
+    border-radius: 0 0 40px 40px;
 }
 
 .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    background-image: url('logo.png'); /* Add your logo image */
+    width: 80px;
+    height: 80px;
+    background-image: url('../images/logo.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
-/* Left and Right Nav styling */
+/* Navbar Links */
 .nav-left, .nav-right {
     display: flex;
     list-style-type: none;
+    gap: 90px;
+    align-items: center;
+    margin-left: 70px;
+    margin-right: 70px;
 }
 
-.nav-left {
-    gap: 20px;
-    margin-right: auto;
-}
-
-.nav-right {
-    gap: 20px;
-    margin-left: auto;
-}
-
-.nav-links li {
-    display: inline;
-}
-
+/* Navbar Links with Hover Effect */
 .nav-links a {
-    text-decoration: none;
-    color: #000; /* Black color for text */
+    text-decoration: none !important;
+    color: #000 !important;
     font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 10px 15px; /* Add padding to give space for the border */
+    border: 5px dashed transparent; /* Initially, the border is transparent */
+    border-radius: 15px; /* Rounded corners */
+    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease; /* Add border transition */
 }
 
 .nav-links a:hover {
     color: #C3B091;
+    transform: scale(1.1); /* Slightly scale the link */
+    border-color: #C3B091; /* Change the border color on hover */
 }
 
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 50px;
-}
-
-.hero h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    margin-top: 30px;
-}
-
-.text {
-    max-width: 400px;
-}
-
-.text p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
 
 .btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #C3E3B091;
+    background-color: rgba(195, 227, 176, 0.9); /* Use rgba for transparency */
     color: #000;
     border-radius: 30px;
     text-decoration: none;
@@ -110,41 +77,990 @@ body {
     background-color: #A9CB91;
 }
 
-.image img {
-    width: 350px;
-    border-radius: 20px;
+/* Hide the nav links by default on mobile */
+.nav-left, .nav-right {
+    display: none;
 }
 
-/* Mobile responsiveness */
+.nav-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Basic styles for all nav links */
+.nav-links a {
+    color: black; /* Default color */
+    text-decoration: none;
+}
+
+/* Active link styles */
+.nav-links a.active {
+    color: orange !important; /* Ensure this color applies with !important */
+    font-weight: bold; /* Optional: make the active link bold */
+}
+
+
+
+/* Mobile View: Toggle the nav-links */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 769px) {
+    .nav-left, .nav-right {
+        display: flex; /* Display flex on larger screens */
+    }
+
+    .nav-toggle {
+        display: none; /* Hide the hamburger button on larger screens */
+    }
+
+    .nav-links {
+        flex-direction: row;
+    }
+}
+
+
+
+ /* index.html */
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 90px;
+    flex-wrap: wrap;
+}
+
+.text {
+    max-width: 400px;
+    text-align: center;
+    margin-top: -200px;
+    margin-bottom: 50px; 
+}
+
+
+
+.btn {
+    padding: 20px 30px;
+    background-color: #FFE100;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2px solid #333; 
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.pets {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 20px;
+    position: relative;
+}
+
+
+.pet-speech {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+/* Talk Bubble Styles */
+.talk-bubble {
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    
+
+}
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+.border {
+    border: 2px solid #000000;
+}
+
+.round {
+    border-radius: 100px;
+}
+
+.bubble-tail-left {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 20px;
+    bottom: -40px;
+    margin-bottom: 21px;
+    border: 10px solid;
+    border-color: #000000 transparent transparent #000000;
+    transform: rotate(11deg); /* Optional: Add a slight rotation */
+}
+
+/* Right Bubble Tail */
+.bubble-tail-right {
+    position: absolute;
+    width: 0;
+    height: 0; /* Keep height at 0 for proper triangle formation */
+    right: 20px;
+    bottom: -62px;
+    margin-bottom: 28px;
+    border: 20px solid; /* Increase the border width to extend the triangle */
+    border-color: #000000 #000000 transparent transparent;
+    transform: rotate(-20deg); /* Maintain the current rotation */
+}
+
+
+/* Specific Bubble Tail for Cat (Meow Meow?) */
+.cat-bubble-tail {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 20px;
+    bottom: -40px;
+    margin-bottom: 20px;
+    border: 10px solid;
+    border-color: #000000 transparent transparent #000000;
+    transform: rotate(7deg); /* Optional: Add a slight rotation */
+}
+
+
+
+
+.talktext {
+    padding: 1em;
+    text-align: left;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.talktext p {
+    margin: 0;
+}
+
+/* Positioning the Speech Bubbles */
+#dog1 .talk-bubble {
+    top: -27px;
+    left: 90px;
+
+}
+
+#dogCatContainer .talk-bubble {
+    top: -160px;
+    left: -100px;
+
+}
+
+#cat1 .talk-bubble {
+    top: -40px;
+    right: -90px;
+}
+
+/* Positioning Pet Images */
+#dog1 {
+    position: relative;
+    transform: rotate(-20deg);
+}
+
+#dogCatContainer {
+    right: 120px;
+    position: relative;
+    bottom: 70px;
+
+}
+
+#cat1 {
+    position: relative;
+    left: 70px;
+bottom: 170px;
+
+
+
+ 
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         text-align: center;
+        padding: 20px;
     }
 
-    .logo {
-        position: static;
-        transform: none;
-        margin-bottom: 10px;
-    }
-
-    .nav-left, .nav-right {
+    .nav-links {
         flex-direction: column;
-        gap: 10px;
-        margin: 0;
+        gap: 15px;
     }
 
-    .logo {
-        width: 80px;
-        height: 80px;
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .text p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 10px 20px;
     }
 
     .content {
+        gap: 10px;
+    }
+}
+
+
+ /* end of index.html*/
+
+
+ /* about.html*/
+.about-us {
+    text-align: center;
+    padding: 50px 20px;
+    position: absolute;
+}
+
+
+.about-us h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.about-logo {
+    width: 300px;
+}
+
+.about-content p {
+
+    font-size: 18px;
+    text-align: justify;
+    font-size: 20px;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #C3B091;
+    margin: 40px 0;
+}
+
+.team-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* Team members section */
+.team {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 60%; /* Adjust width to take up 60% of the container */
+}
+
+.team-member {
+    text-align: center;
+    max-width: 120px;
+    position: relative;
+    cursor: pointer;
+}
+
+.team-member img.team-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    border: 2px solid #000000;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.team-member p {
+    font-size: 16px;
+    background-color: #FFFFE0;
+    color: black;
+    padding: 7px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 90px 90px;
+    border: 2px solid #000000;
+}
+
+
+.pet-name {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFFFE0;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    color: #333;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+}
+
+.pet-img {
+    display: none;
+    position: absolute;
+    top: 110px; /* Position the pet image below the team member */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #000;
+}
+
+.team-member:hover .pet-name, .team-member:hover .pet-img {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Optionally, apply hover effect to change the image's border color */
+.team-member:hover img.team-img {
+    border-color: #C3B091;
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+/* On hover, also change the text style */
+.team-member:hover p {
+    background-color: #C3B091;
+    color: white;
+}
+
+/* Team description section */
+.team-description {
+    width: 30%;
+    text-align: left;
+}
+
+.team-description h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: inline-flex; /* Use inline-flex for better control of alignment */
+    align-items: center; /* Align the icon and text vertically */
+}
+
+.team-icon {
+    width: 30px; /* Adjust size to fit well beside the text */
+    height: auto;
+    margin-right: 5px; /* Add space between icon and text */
+    vertical-align: middle; /* Ensure vertical alignment with text */
+    margin-bottom: 15px;
+}
+
+
+
+.team-description p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .team-section {
         flex-direction: column;
         text-align: center;
     }
 
-    .image img {
+    .team {
         width: 100%;
     }
+
+    .team-description {
+        width: 100%;
+        margin-top: 20px;
+    }
 }
+
+
+.mission-vision {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.mission, .vision {
+    background-color: #FFFFE0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.mission h3, .vision h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.mission p, .vision p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+
+/* Pets Section Styling */
+.pets-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.pets-section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.category {
+    margin-top: 30px;
+}
+
+.category h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Pet Cards Layout */
+.pet-cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.pet-cards {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    gap: 20px;
+}
+
+.pet-card {
+    background-color: #FFFFE0;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 150px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.pet-card p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.gender {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.female {
+    color: #ff69b4;
+}
+
+.male {
+    color: #1e90ff;
+}
+
+/* Scroll Button Styling */
+.scroll-btn {
+    background-color: #FFFFE0;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .pets-section h1 {
+        font-size: 24px;
+    }
+
+    .category h2 {
+        font-size: 20px;
+    }
+
+    .pet-cards {
+        gap: 15px;
+    }
+
+    .pet-card {
+        width: 130px;
+    }
+
+    .pet-card img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pets-section h1 {
+        font-size: 20px;
+    }
+
+    .category h2 {
+        font-size: 18px;
+    }
+
+    .pet-cards {
+        gap: 10px;
+    }
+
+    .pet-card {
+        width: 110px;
+    }
+
+    .pet-card img {
+        width: 70px;
+        height: 70px;
+    }
+}/* Adopt Section Styling */
+.adopt-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.adopt-section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.pet-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.pet-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet-details {
+    text-align: left;
+}
+
+.pet-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.pet-details p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+hr {
+    border: none;
+    border-bottom: 2px solid #C3B091;
+    margin: 40px 0;
+}
+
+/* Success Story Section */
+.success-story {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.success-story-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.adopter-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.success-story-content p {
+    font-size: 18px;
+    color: #333;
+}
+
+.success-story-content strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #FFFFE0;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    border-top: 2px solid #C3B091;
+}
+/* Caring for Your New Pet Section */
+.care {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #FFFFE0; /* light background for the care section */
+}
+
+.care h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.care-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Care Category Styles */
+.care-category {
+    padding: 20px;
+    border: 2px solid #C3B091;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.care-category h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Feeding Practices Section */
+.feeding-practices {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dog-feeding, .cat-feeding {
+    width: 100%;
+    max-width: 450px;
+    background-color: #F8F8F8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dog-feeding h3, .cat-feeding h3 {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.dog-feeding ul, .cat-feeding ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.dog-feeding li, .cat-feeding li {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Responsive Design for the Care Section */
+@media (max-width: 768px) {
+    .feeding-practices {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .dog-feeding, .cat-feeding {
+        width: 100%;
+    }
+
+    .care-section {
+        gap: 20px;
+    }
+
+    .care h1 {
+        font-size: 28px;
+    }
+
+    .care-category h2 {
+        font-size: 24px;
+    }
+}
+
+
+
+/* Contact Us Section Styling */
+.contact-us {
+    padding: 60px 0;
+    background-color: #fff;
+}
+.contact-us h1 {
+    font-family: var(--heading-font);
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.contact-us hr {
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    margin: 40px 0;
+}
+
+.contact-us p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+
+.contact-info h2,
+.visit-us h2,
+.operating-hours h2,
+.follow-us h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.contact-info,
+.visit-us,
+.operating-hours,
+.follow-us {
+    margin-bottom: 40px;
+}
+
+.contact-info p, .visit-us p, .operating-hours p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+hr {
+    border: none;
+    border-bottom: 2px solid #C3B091;
+    margin: 30px 0;
+}
+
+.visit-us img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design for Contact Section */
+@media (max-width: 768px) {
+    .contact-us h1 {
+        font-size: 28px;
+    }
+
+    .contact-info p, .visit-us p, .operating-hours p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-us h1 {
+        font-size: 24px;
+    }
+
+    .contact-info p, .visit-us p, .operating-hours p {
+        font-size: 14px;
+    }
+
+    .social-icons img {
+        width: 35px;
+        height: 35px;
+    }
+}
+/* Exercise Section Styling */
+.care-category h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.care-category p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Grooming Section Styling */
+.grooming-practices {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.grooming-practices h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.grooming-practices ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.grooming-practices li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Health Care Section Styling */
+.health-care-section {
+    background-color: #F8F8F8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.health-care-section h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.health-care-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Responsive Design for Care Categories */
+@media (max-width: 768px) {
+    .grooming-practices,
+    .health-care-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .grooming-practices h3, .health-care-section h3 {
+        font-size: 20px;
+    }
+
+    .grooming-practices ul, .health-care-section p {
+        font-size: 16px;
+    }
+}
+
+
+
+
+

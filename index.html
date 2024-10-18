@@ -2,30 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fur-Ever Home</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Linking to your CSS file -->
-    <!-- Google Fonts: Jua -->
+    <title>Fur-Ever Home Pet Adoption</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div class="navbar">
-    <ul class="nav-left">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Pets</a></li>
-    </ul>
-
-    <div class="logo"></div> <!-- Logo handled in CSS -->
-
-    <ul class="nav-right">
-        <li><a href="#">Adopt</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</div>
-
+    <nav class="navbar">
+        <ul class="nav-left nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html" >About</a></li>
+            <li><a href="pets.html">Pets</a></li>
+        </ul>
+        <div class="logo"></div>
+        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <ul class="nav-right nav-links">
+            <li><a href="adopt.html">Adopt</a></li>
+            <li><a href="contact.html" >Contact</a></li>
+            <li><a href="track.html">Track</a></li>
+        </ul>
+    </nav>
     
-
+    <main>
+        <section class="hero">
+            <div class="content">
+                <div class="text">
+                    <h1>We believe every neglected pet deserves a loving home.</h1>
+                </div>
+                
+                <!-- Pet Images with Overlapping Effect -->
+                <div class="pets">
+                    <!-- Dog 1 -->
+                    <div class="pet-speech" id="dog1">
+                        <img src="images/one dog.png" alt="Dog 1" width="200px">
+                        <div class="talk-bubble tri-right border round btm-left-in">
+                            <div class="talktext">
+                                <p>San kau punta bos?</p>
+                            </div>
+                            <div class="bubble-tail-left"></div>
+                        </div>
+                    </div>
+                
+                    <!-- Standalone Cat -->
+                    <div class="pet-speech" id="cat1">
+                        <img src="images/cat (2).png" alt="Cat 1" width="150px">
+                        <div class="talk-bubble tri-right border round btm-left-in">
+                            <div class="talktext">
+                                <p>Meow Meow?</p>
+                            </div>
+                            <div class="cat-bubble-tail"></div>
+                        </div>
+                    </div>
+                
+                    <!-- Dog with Cat -->
+                    <div class="pet-speech" id="dogCatContainer">
+                        <img src="images/dog with cat.png" alt="Dog with Cat" class="dog-cat" width="250px">
+                        <div class="talk-bubble tri-right border round btm-right-in">
+                            <div class="talktext">
+                                <p>Click niyo ung “Learn More” para malaman niyo!</p>
+                            </div>
+                            <div class="bubble-tail-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>On this site, you'll discover how to adopt a pet and learn helpful tips for caring for your new furry friend.</h2>
+            <a href="#" class="btn">Learn More</a>
+        </section>
+    </main>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>
