@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
 }
 
 body {
@@ -194,7 +194,6 @@ body {
     width: 150px;
     opacity: 0;
     animation: fadeIn 1.5s forwards;
-    
 
 }
 
@@ -381,11 +380,6 @@ bottom: 170px;
     font-size: 20px;
 }
 
-hr {
-    border: none;
-    border-bottom: 1px solid #C3B091;
-    margin: 40px 0;
-}
 
 .team-section {
     display: flex;
@@ -400,13 +394,13 @@ hr {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     width: 60%; /* Adjust width to take up 60% of the container */
 }
 
 .team-member {
     text-align: center;
-    max-width: 120px;
+    max-width: 140px;
     position: relative;
     cursor: pointer;
 }
@@ -421,16 +415,17 @@ hr {
     transition: transform 0.3s ease;
 }
 
+
 .team-member p {
     font-size: 16px;
     background-color: #FFFFE0;
     color: black;
     padding: 7px;
-    width: 100%;
+    width: 84%;
     position: absolute;
-    bottom: 0;
+    top: 100px;
     left: 0;
-    border-radius: 0 0 90px 90px;
+    border-radius: 0 0 30px 30px;
     border: 2px solid #000000;
 }
 
@@ -446,7 +441,7 @@ hr {
     border: 1px solid #000;
     color: #333;
     font-size: 14px;
-    width: 100px;
+    width: 60px;
     text-align: center;
 }
 
@@ -474,12 +469,19 @@ hr {
     transform: scale(1.05); /* Slight zoom-in effect */
 }
 
-/* On hover, also change the text style */
+
 .team-member:hover p {
-    background-color: #C3B091;
-    color: white;
+    transform: scale(1); /* Ensures the width remains uniform */
+    width: 79%; /* Keep both at full width */
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    left: 2px;
 }
 
+/* On hover, also change the text style */
+.team-member:hover p {
+    background-color: #f0e68c; /* Slight color change on hover */
+    transform: scale(1.1); /* Zoom effect for the text as well */
+}
 /* Team description section */
 .team-description {
     width: 30%;
@@ -528,33 +530,74 @@ hr {
     }
 }
 
-
 .mission-vision {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
     gap: 40px;
-    margin-top: 40px;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #FDF5E6;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mission, .vision {
-    background-color: #FFFFE0;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission:hover, .vision:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.mission-icon, .vision-icon {
+    width: 50px;
+    margin-bottom: 15px;
 }
 
 .mission h3, .vision h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #444;
 }
 
 .mission p, .vision p {
-    font-size: 16px;
+    font-size: 18px;
     text-align: justify;
+    line-height: 1.8;
+    color: #555;
+}
+
+.highlight {
+    color: #FF6347;
+    font-weight: bold;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .mission-vision {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mission, .vision {
+        width: 80%;
+    }
 }
 
 
-/* Pets Section Styling */
+/* end of about.html */
+
+
+/* pet.html*/
 .pets-section {
     text-align: center;
     padding: 40px 20px;
@@ -563,7 +606,7 @@ hr {
 .pets-section h1 {
     font-size: 32px;
     margin-bottom: 20px;
-    color: #333;
+
 }
 
 .category {
@@ -573,138 +616,213 @@ hr {
 .category h2 {
     font-size: 28px;
     margin-bottom: 15px;
-    color: #555;
+
 }
+
 
 /* Pet Cards Layout */
+/* Container for pet cards with buttons outside */
 .pet-cards-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    width: 90%; /* Adjust to fit your design */
+    margin: auto;
+    display: flex;
+    align-items: center; /* Align content and buttons vertically */
+    gap: 10px; /* Add spacing between elements */
+    overflow: hidden; /* Hide overflowing cards */
 }
 
+/* Pet Cards Wrapper */
 .pet-cards {
     display: flex;
-    overflow: hidden;
-    width: 80%;
-    gap: 20px;
+    transition: transform 0.5s ease-in-out; /* Smooth scroll */
+    gap: 80px; /* Spacing between cards */
+    width: max-content; /* Ensure the wrapper adjusts to content */
 }
+
+
 
 .pet-card {
-    background-color: #FFFFE0;
-    padding: 10px;
-    border-radius: 15px;
+    flex: 0 0 calc(25% - 20px); /* 4 cards per row */
+    max-width: 150px;
+    background-color: #FFF2C1;
+    padding: 60px;
+    border-radius: 55px;
     text-align: center;
-    width: 150px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid black;
 }
 
-.pet-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.pet-card p {
-    font-size: 16px;
-    color: #333;
-    margin: 5px 0;
-}
-
-.gender {
-    font-size: 20px;
-    margin-top: 5px;
-}
-
-.female {
-    color: #ff69b4;
-}
-
-.male {
-    color: #1e90ff;
-}
-
-/* Scroll Button Styling */
 .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background-color: #FFFFE0;
     border: none;
     font-size: 24px;
     padding: 10px;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 25%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+    z-index: 40; 
+
+    border: 3px solid black;
+}
+/* Hover Effect for Buttons */
+.scroll-btn:hover {
+    background-color: #A9CB91;
 }
 
+/* Positioning Left Button Outside the Container */
 .left-btn {
-    left: 10px;
+    left: 0;
 }
 
+/* Positioning Right Button Outside the Container */
 .right-btn {
-    right: 10px;
+    right: 0;
 }
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .pets-section h1 {
-        font-size: 24px;
-    }
-
-    .category h2 {
-        font-size: 20px;
-    }
-
-    .pet-cards {
-        gap: 15px;
-    }
-
     .pet-card {
-        width: 130px;
+        flex: 0 0 calc(50% - 10px); /* 2 cards per row */
     }
 
-    .pet-card img {
-        width: 80px;
-        height: 80px;
+    .left-btn, .right-btn {
+        margin: 0; /* Reset button margins */
+    }
+
+    .filter-dropdown {
+        display: none; /* Hide filter on smaller screens if needed */
     }
 }
 
 @media (max-width: 480px) {
-    .pets-section h1 {
-        font-size: 20px;
-    }
-
-    .category h2 {
-        font-size: 18px;
-    }
-
-    .pet-cards {
-        gap: 10px;
-    }
-
     .pet-card {
-        width: 110px;
+        flex: 0 0 calc(100% - 10px); /* 1 card per row */
     }
+}
 
-    .pet-card img {
-        width: 70px;
-        height: 70px;
-    }
-}/* Adopt Section Styling */
+/* end of pet.html*/
+
+
+
+/*adopt.html*/
+
 .adopt-section {
-    padding: 40px 20px;
     text-align: center;
+    padding: 40px 20px;
 }
 
 .adopt-section h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 42px;
+    margin-bottom: 50px;
+   
 }
+
+.adopt-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 120px;
+}
+
+.adoption-center {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    width: 100px;
+    height: 100px;
+    background-color: #FFF2C1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-right: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 40px;
+    /* borderline*/
+    border: 3px solid #000000;
+}
+
+
+
+.step-content {
+    flex: 1;
+}
+
+/* Title for each step */
+.step-title {
+    font-size: 24px;
+    font-weight: bold;
+
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Description text under the title */
+.step-description {
+    font-size: 26px;
+  
+    margin: 0;
+    line-height: 1.6;
+
+}
+
+.neighbor-div {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.neighbor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 90px;
+
+}
+
+.neighbor-div .bubble-tail-left {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 20px;
+    bottom: -33px;
+    margin-bottom: 21px;
+    border: 10px solid;
+    border-color: #000000 transparent transparent #000000;
+    transform: rotate(19deg); 
+}
+
+.neighbor-div .talk-bubble {
+    background-color: white;
+    margin-bottom: 300px;
+}
+
+
+
 
 .pet-info {
     display: flex;
@@ -740,8 +858,11 @@ hr {
 
 hr {
     border: none;
-    border-bottom: 2px solid #C3B091;
-    margin: 40px 0;
+    border-bottom: 2px solid black;
+    margin: 60px 0;
+    width: 90%;
+    margin-left: auto; /* Center the hr */
+    margin-right: auto;
 }
 
 /* Success Story Section */
@@ -779,21 +900,25 @@ hr {
     color: #333;
 }
 
-/* Footer Styling */
-footer {
-    background-color: #FFFFE0;
-    padding: 20px;
-    text-align: center;
-    font-size: 16px;
-    color: #555;
-    border-top: 2px solid #C3B091;
-}
+
 /* Caring for Your New Pet Section */
 .care {
     padding: 40px 20px;
     text-align: center;
     background-color: #FFFFE0; /* light background for the care section */
 }
+.icon {
+    max-width: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.icon-pets {
+    max-width: 17%;
+}
+
+
+
 
 .care h1 {
     font-size: 36px;
@@ -822,6 +947,41 @@ footer {
     color: #333;
 }
 
+.collapsible {
+    background-color: #FFF2C1; /* Light background for headers */
+    cursor: pointer;
+    padding: 13px;
+    width: 30%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 28px; /* Match existing h2 font-size */
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+.collapsible:hover {
+    background-color: #e2e2e2;
+}
+
+.collapsible.active {
+    background-color: #ddd; /* Slightly darker when active */
+}
+
+/* Specific Styles for Collapsible Titles */
+.collapsible .collapsible-title {
+    display: flex;
+    align-items: center;
+    font-size: 28px; /* Ensures consistent font size */
+    color: #333; /* Ensures consistent color */
+    font-family: 'Jua', sans-serif;
+}
+
 /* Feeding Practices Section */
 .feeding-practices {
     display: flex;
@@ -833,7 +993,7 @@ footer {
 .dog-feeding, .cat-feeding {
     width: 100%;
     max-width: 450px;
-    background-color: #F8F8F8;
+    background-color: #FFF2C1;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -879,6 +1039,9 @@ footer {
         font-size: 24px;
     }
 }
+
+
+/* end of care.html */
 
 
 
@@ -929,11 +1092,7 @@ footer {
     line-height: 1.6;
 }
 
-hr {
-    border: none;
-    border-bottom: 2px solid #C3B091;
-    margin: 30px 0;
-}
+
 
 .visit-us img {
     max-width: 100%;
@@ -1064,3 +1223,108 @@ hr {
 
 
 
+/* Resources Section */
+.resources-section {
+    padding: 60px 20px;
+}
+
+.resources-section h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #333;
+}
+
+.pdf-resources, .video-resources {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.pdf-resource, .video-resource {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pdf-resource:hover, .video-resource:hover {
+    transform: translateY(-10px);
+}
+
+.pdf-thumbnail, .video-thumbnail {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-resource p, .video-resource p {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.pdf-resource a, .video-resource a {
+    color: #C3B091;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pdf-resource a:hover, .video-resource a:hover {
+    text-decoration: underline;
+}
+
+/* FAQ Section */
+.faq {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item p {
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+    position: relative;
+}
+
+.faq-item p::after {
+    content: '\25BC';
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active p::after {
+    transform: rotate(-180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+    background-color: #f9f9f9;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 15px;
+}
+
+.faq-answer p {
+    font-size: 16px;
+    line-height: 1.6;
+}
