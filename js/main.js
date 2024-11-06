@@ -46,67 +46,74 @@ navToggle.addEventListener('click', () => {
 });
 
 
-// JavaScript for Infinite-Looping Carousel and Category Navigation
+// JavaScript for Infinite-Looping Carousel and Hover Effects
 document.addEventListener('DOMContentLoaded', () => {
-    // Select all carousels
-    const petCardsContainers = document.querySelectorAll('.pet-cards-container');
+    const carousels = document.querySelectorAll('.pet-cards-container');
 
-    petCardsContainers.forEach((container) => {
-        const petCards = container.querySelector('.pet-cards');
-        const petCardsChildren = Array.from(petCards.children);
-        const totalCards = petCardsChildren.length;
-        const cardWidth = petCardsChildren[0].offsetWidth + 20;
+    carousels.forEach((carousel) => {
+        const petCards = carousel.querySelector('.pet-cards');
+        const slides = Array.from(petCards.children);
+        const totalSlides = slides.length;
 
-        // Clone first and last few cards
-        const clonesBefore = petCardsChildren.slice(-3).map(card => card.cloneNode(true));
-        const clonesAfter = petCardsChildren.slice(0, 3).map(card => card.cloneNode(true));
+        // Calculate slide width including margin
+        const slideStyle = getComputedStyle(slides[0]);
+        let slideWidth = slides[0].offsetWidth + parseInt(slideStyle.marginRight);
 
-        clonesBefore.forEach(clone => petCards.insertBefore(clone, petCards.firstChild));
-        clonesAfter.forEach(clone => petCards.appendChild(clone));
+        // Track current index
+        let currentIndex = 0;
 
-        // Adjust the carousel's initial position
-        let currentIndex = totalCards;
-        const initialShift = -currentIndex * cardWidth;
-        petCards.style.transform = `translateX(${initialShift}px)`;
-
-        // Function to update the carousel's transform
-        function updateCarousel() {
-            const shift = -currentIndex * cardWidth;
+        // Function to move carousel
+        const moveToSlide = (index) => {
             petCards.style.transition = 'transform 0.5s ease-in-out';
-            petCards.style.transform = `translateX(${shift}px)`;
-        }
+            petCards.style.transform = `translateX(${-slideWidth * index}px)`;
+        };
 
-        // Handle transition end for infinite looping
+        // Function to handle cycling
+        const cycleSlides = (direction) => {
+            if (direction === 'next') {
+                currentIndex = (currentIndex + 1) % totalSlides;
+            } else {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            }
+            moveToSlide(currentIndex);
+        };
+
+        // Event listeners for navigation buttons
+        const prevBtn = carousel.querySelector('.left-btn');
+        const nextBtn = carousel.querySelector('.right-btn');
+
+        nextBtn.addEventListener('click', () => cycleSlides('next'));
+        prevBtn.addEventListener('click', () => cycleSlides('prev'));
+
+        // Handle transition end for smooth cycling
         petCards.addEventListener('transitionend', () => {
-            if (currentIndex >= totalCards + 3) {
+            // If we're at the end, instantly jump to start
+            if (currentIndex === totalSlides - 1) {
                 petCards.style.transition = 'none';
-                currentIndex = totalCards;
-                const shift = -currentIndex * cardWidth;
-                petCards.style.transform = `translateX(${shift}px)`;
+                currentIndex = 0;
+                moveToSlide(currentIndex);
+                // Force reflow
+                petCards.offsetHeight;
+                petCards.style.transition = 'transform 0.5s ease-in-out';
             }
-            if (currentIndex <= 2) {
+            // If we're at the start, instantly jump to end
+            if (currentIndex === 0) {
                 petCards.style.transition = 'none';
-                currentIndex = totalCards + 2;
-                const shift = -currentIndex * cardWidth;
-                petCards.style.transform = `translateX(${shift}px)`;
+                currentIndex = totalSlides - 1;
+                moveToSlide(currentIndex);
+                // Force reflow
+                petCards.offsetHeight;
+                petCards.style.transition = 'transform 0.5s ease-in-out';
             }
         });
 
-        // Scroll buttons
-        const leftBtn = container.querySelector('.left-btn');
-        const rightBtn = container.querySelector('.right-btn');
-
-        leftBtn.addEventListener('click', () => {
-            currentIndex--;
-            updateCarousel();
-        });
-
-        rightBtn.addEventListener('click', () => {
-            currentIndex++;
-            updateCarousel();
+        // Update slideWidth on window resize
+        window.addEventListener('resize', () => {
+            const slideStyle = getComputedStyle(slides[0]);
+            slideWidth = slides[0].offsetWidth + parseInt(slideStyle.marginRight);
+            moveToSlide(currentIndex);
         });
     });
-
 });
 
 

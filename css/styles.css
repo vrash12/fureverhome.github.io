@@ -394,8 +394,8 @@ bottom: 170px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
-    width: 60%; /* Adjust width to take up 60% of the container */
+    gap: 50px;
+    width: 60%; 
 }
 
 .team-member {
@@ -521,7 +521,7 @@ bottom: 170px;
     }
 
     .team {
-        width: 100%;
+        width: 30%;
     }
 
     .team-description {
@@ -601,12 +601,12 @@ bottom: 170px;
 .pets-section {
     text-align: center;
     padding: 40px 20px;
+    
 }
 
 .pets-section h1 {
     font-size: 32px;
     margin-bottom: 20px;
-
 }
 
 .category {
@@ -616,97 +616,63 @@ bottom: 170px;
 .category h2 {
     font-size: 28px;
     margin-bottom: 15px;
-
 }
-
 
 /* Pet Cards Layout */
-/* Container for pet cards with buttons outside */
 .pet-cards-container {
-    position: relative;
-    width: 90%; /* Adjust to fit your design */
+    width: 70%;
     margin: auto;
-    display: flex;
-    align-items: center; /* Align content and buttons vertically */
-    gap: 10px; /* Add spacing between elements */
-    overflow: hidden; /* Hide overflowing cards */
+    gap: 80px;
+
 }
 
-/* Pet Cards Wrapper */
 .pet-cards {
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth scroll */
-    gap: 80px; /* Spacing between cards */
-    width: max-content; /* Ensure the wrapper adjusts to content */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10%;
+    padding: 20px 0;
 }
-
-
 
 .pet-card {
-    flex: 0 0 calc(25% - 20px); /* 4 cards per row */
-    max-width: 150px;
     background-color: #FFF2C1;
-    padding: 60px;
-    border-radius: 55px;
+    padding: 20px;
+    border-radius: 25px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border: 3px solid black;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #FFFFE0;
-    border: none;
+.pet-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.pet-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.gender {
     font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 25%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    z-index: 40; 
-
-    border: 3px solid black;
 }
-/* Hover Effect for Buttons */
-.scroll-btn:hover {
-    background-color: #A9CB91;
-}
-
-/* Positioning Left Button Outside the Container */
-.left-btn {
-    left: 0;
-}
-
-/* Positioning Right Button Outside the Container */
-.right-btn {
-    right: 0;
-}
-
-
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .pet-card {
-        flex: 0 0 calc(50% - 10px); /* 2 cards per row */
-    }
-
-    .left-btn, .right-btn {
-        margin: 0; /* Reset button margins */
-    }
-
-    .filter-dropdown {
-        display: none; /* Hide filter on smaller screens if needed */
+    .pet-cards {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
 
 @media (max-width: 480px) {
-    .pet-card {
-        flex: 0 0 calc(100% - 10px); /* 1 card per row */
+    .pet-cards {
+        grid-template-columns: 1fr;
     }
 }
-
 /* end of pet.html*/
 
 
@@ -716,11 +682,18 @@ bottom: 170px;
 .adopt-section {
     text-align: center;
     padding: 40px 20px;
+    gap: 10px;
+    margin-bottom: 10px;
+/*center the content */
+    
+
 }
 
 .adopt-section h1 {
-    font-size: 42px;
+    font-size: 70px;
     margin-bottom: 50px;
+    /* make it left*/
+    text-align: left;
    
 }
 
@@ -733,17 +706,18 @@ bottom: 170px;
 .adoption-center {
     display: flex;
     align-items: flex-start;
-    max-width: 100%;
+    max-width: 70%;
     border: 2px solid #ddd;
     padding: 20px;
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .step-number {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-color: #FFF2C1;
     border-radius: 50%;
     display: flex;
@@ -754,10 +728,11 @@ bottom: 170px;
     color: #000000;
     margin-right: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    font-size: 40px;
+    font-size: 30px;
     /* borderline*/
     border: 3px solid #000000;
 }
+
 
 
 
@@ -765,15 +740,7 @@ bottom: 170px;
     flex: 1;
 }
 
-/* Title for each step */
-.step-title {
-    font-size: 24px;
-    font-weight: bold;
 
-    margin: 0;
-    margin-bottom: 10px;
-    font-family: 'Comic Sans MS', sans-serif;
-}
 
 /* Description text under the title */
 .step-description {
@@ -808,18 +775,51 @@ bottom: 170px;
     position: absolute;
     width: 0;
     height: 0;
-    left: 20px;
+    right: 50px;
     bottom: -33px;
     margin-bottom: 21px;
     border: 10px solid;
     border-color: #000000 transparent transparent #000000;
-    transform: rotate(19deg); 
+    transform: rotate(20deg); 
 }
 
 .neighbor-div .talk-bubble {
     background-color: white;
     margin-bottom: 300px;
+    right: 47%;
 }
+
+
+.neighbor-div .bubble-tail-left1 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 50px;
+    bottom: -33px;
+    margin-bottom: 21px;
+    border: 10px solid;
+    border-color: #530fff transparent transparent #530fff;
+    transform: rotate(19deg); 
+}
+
+.neighbor-div .talk-bubble1 {
+    background-color: white;
+    margin-bottom: 300px;
+    right: 47%;
+}
+
+
+.rescue-section {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 
 
@@ -901,11 +901,11 @@ hr {
 }
 
 
-/* Caring for Your New Pet Section */
+/* care.html */
 .care {
     padding: 40px 20px;
     text-align: center;
-    background-color: #FFFFE0; /* light background for the care section */
+
 }
 .icon {
     max-width: 50px;
@@ -950,19 +950,19 @@ hr {
 .collapsible {
     background-color: #FFF2C1; /* Light background for headers */
     cursor: pointer;
-    padding: 13px;
-    width: 30%;
+    padding: 8px;
+    width: 20%;
     border: none;
     text-align: center;
     outline: none;
-    font-size: 28px; /* Match existing h2 font-size */
     transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
     border-radius: 50px;
     margin: 0 auto;
     border: 2px solid black;
+    margin-bottom: 92px;
 }
 
 .collapsible:hover {
@@ -988,6 +988,7 @@ hr {
     gap: 40px;
     justify-content: space-around;
     flex-wrap: wrap;
+    
 }
 
 .dog-feeding, .cat-feeding {
@@ -995,8 +996,9 @@ hr {
     max-width: 450px;
     background-color: #FFF2C1;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
 }
 
 .dog-feeding h3, .cat-feeding h3 {
