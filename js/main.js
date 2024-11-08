@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
 //Navbar
 // Add shadow to navbar on scroll
 window.addEventListener('scroll', () => {
@@ -46,80 +47,8 @@ navToggle.addEventListener('click', () => {
 });
 
 
-// JavaScript for Infinite-Looping Carousel and Hover Effects
-document.addEventListener('DOMContentLoaded', () => {
-    const carousels = document.querySelectorAll('.pet-cards-container');
-
-    carousels.forEach((carousel) => {
-        const petCards = carousel.querySelector('.pet-cards');
-        const slides = Array.from(petCards.children);
-        const totalSlides = slides.length;
-
-        // Calculate slide width including margin
-        const slideStyle = getComputedStyle(slides[0]);
-        let slideWidth = slides[0].offsetWidth + parseInt(slideStyle.marginRight);
-
-        // Track current index
-        let currentIndex = 0;
-
-        // Function to move carousel
-        const moveToSlide = (index) => {
-            petCards.style.transition = 'transform 0.5s ease-in-out';
-            petCards.style.transform = `translateX(${-slideWidth * index}px)`;
-        };
-
-        // Function to handle cycling
-        const cycleSlides = (direction) => {
-            if (direction === 'next') {
-                currentIndex = (currentIndex + 1) % totalSlides;
-            } else {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            }
-            moveToSlide(currentIndex);
-        };
-
-        // Event listeners for navigation buttons
-        const prevBtn = carousel.querySelector('.left-btn');
-        const nextBtn = carousel.querySelector('.right-btn');
-
-        nextBtn.addEventListener('click', () => cycleSlides('next'));
-        prevBtn.addEventListener('click', () => cycleSlides('prev'));
-
-        // Handle transition end for smooth cycling
-        petCards.addEventListener('transitionend', () => {
-            // If we're at the end, instantly jump to start
-            if (currentIndex === totalSlides - 1) {
-                petCards.style.transition = 'none';
-                currentIndex = 0;
-                moveToSlide(currentIndex);
-                // Force reflow
-                petCards.offsetHeight;
-                petCards.style.transition = 'transform 0.5s ease-in-out';
-            }
-            // If we're at the start, instantly jump to end
-            if (currentIndex === 0) {
-                petCards.style.transition = 'none';
-                currentIndex = totalSlides - 1;
-                moveToSlide(currentIndex);
-                // Force reflow
-                petCards.offsetHeight;
-                petCards.style.transition = 'transform 0.5s ease-in-out';
-            }
-        });
-
-        // Update slideWidth on window resize
-        window.addEventListener('resize', () => {
-            const slideStyle = getComputedStyle(slides[0]);
-            slideWidth = slides[0].offsetWidth + parseInt(slideStyle.marginRight);
-            moveToSlide(currentIndex);
-        });
-    });
-});
-
-
 
 // js/collapsible.js
-
 document.addEventListener("DOMContentLoaded", function() {
     var coll = document.getElementsByClassName("collapsible");
     for (var i = 0; i < coll.length; i++) {
@@ -129,16 +58,20 @@ document.addEventListener("DOMContentLoaded", function() {
             var isExpanded = this.classList.contains("active");
             this.setAttribute("aria-expanded", isExpanded);
             
+            var chevron = this.querySelector(".chevron");
+
             if (isExpanded){
                 content.style.maxHeight = content.scrollHeight + "px";
-                // Change icon to up
-                this.querySelector("i").classList.remove("fa-chevron-down");
-                this.querySelector("i").classList.add("fa-chevron-up");
+                // Change chevron to up arrow
+                if (chevron) {
+                    chevron.textContent = "\u25B2"; // Unicode for up arrow ▲
+                }
             } else {
                 content.style.maxHeight = null;
-                // Change icon to down
-                this.querySelector("i").classList.remove("fa-chevron-up");
-                this.querySelector("i").classList.add("fa-chevron-down");
+                // Change chevron to down arrow
+                if (chevron) {
+                    chevron.textContent = "\u25BC"; // Unicode for down arrow ▼
+                }
             } 
         });
     }

@@ -7,20 +7,17 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
     <nav class="navbar">
-        <ul class="nav-left nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="pets.html" class="active">Pets</a></li>
-        </ul>
         <div class="logo"></div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-        <ul class="nav-right nav-links">
-            <li><a href="adopt.html">Adopt</a></li>
-            <li><a href="contact.html">Contact</a></li>
-
-        </ul>
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="care.html">Care</a></li>
+            </ul>
+        </div>
     </nav>
 
     <section class="pets-section">
@@ -75,12 +72,17 @@
                         <p>Golden Retriever</p>
                         <span class="gender male">♂</span>
                     </div>
-                    <div class="pet-card">
-                        <img src="images/pets images/bella.jpeg" alt="Bella">
-                        <p>Bella, 4 years old</p>
-                        <p>Labraador Retriever</p>
-                        <span class="gender female">♀</span>
-                    </div>
+                <!-- Inside your pet-card divs, add the button element -->
+                <div class="pet-card">
+                    <img src="images/pets images/bella.jpeg" alt="Bella">
+                    <p>Bella, 4 years old</p>
+                    <p>Labraador Retriever</p>
+               <!-- Replace the span with an img tag -->
+<img src="images/icon/female 1.png" alt="Female" class="gender-icon">
+
+                    <button class="more-info-btn" onclick="location.href='success-stories/bella.html'">Read Story</button>
+                </div>
+
                     <div class="pet-card">
                         <img src="images/pets images/rocky.jpeg" alt="Rocky">
                         <p>Rocky, 2 years old</p>

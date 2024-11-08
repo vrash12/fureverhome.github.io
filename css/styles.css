@@ -9,122 +9,89 @@ body {
     font-family: 'Jua', sans-serif;
 }
 
+
 /* Navbar Styling */
 .navbar {
     background-color: #FFFFE0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 24px 40px;
-    position: relative;
+    justify-content: space-between; /* Push logo left and nav links right */
+    padding: 10px 20px;
     border-bottom: 2px solid #000000;
     font-size: 20px;
-    border-radius: 0 0 40px 40px;
 }
 
+/* Logo Styling */
 .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background-image: url('../images/logo.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    margin: 20;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Navbar Links */
-.nav-left, .nav-right {
+/* Nav Links Container */
+.nav-links-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Nav Links */
+.nav-links {
     display: flex;
     list-style-type: none;
-    gap: 90px;
+    gap: 30px; /* Consistent gap between links */
     align-items: center;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-right: 100px;
 }
 
-/* Navbar Links with Hover Effect */
+/* Nav Links Styles */
 .nav-links a {
     text-decoration: none !important;
     color: #000 !important;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
-    padding: 10px 15px; /* Add padding to give space for the border */
-    border: 5px dashed transparent; /* Initially, the border is transparent */
-    border-radius: 15px; /* Rounded corners */
-    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease; /* Add border transition */
+    padding: 10px 15px;
+    border: 5px dashed transparent;
+    border-radius: 15px;
+    transition: color 0.3s ease, transform 0.3s ease, border 0.3s ease;
 }
 
+/* Hover Effect */
 .nav-links a:hover {
     color: #C3B091;
-    transform: scale(1.1); /* Slightly scale the link */
-    border-color: #C3B091; /* Change the border color on hover */
+    transform: scale(1.1);
+    border-color: #C3B091;
 }
 
-
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: rgba(195, 227, 176, 0.9); /* Use rgba for transparency */
-    color: #000;
-    border-radius: 30px;
-    text-decoration: none;
+/* Active Link Styles */
+.nav-links a.active {
+    color: orange !important;
     font-weight: bold;
 }
 
-.btn:hover {
-    background-color: #A9CB91;
-}
-
-/* Hide the nav links by default on mobile */
-.nav-left, .nav-right {
-    display: none;
-}
-
-.nav-toggle {
-    display: block;
-    background-color: transparent;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* Basic styles for all nav links */
-.nav-links a {
-    color: black; /* Default color */
-    text-decoration: none;
-}
-
-/* Active link styles */
-.nav-links a.active {
-    color: orange !important; /* Ensure this color applies with !important */
-    font-weight: bold; /* Optional: make the active link bold */
-}
-
-
-
-/* Mobile View: Toggle the nav-links */
-.nav-links.active {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* Media Query for Larger Screens */
-@media (min-width: 769px) {
-    .nav-left, .nav-right {
-        display: flex; /* Display flex on larger screens */
-    }
-
-    .nav-toggle {
-        display: none; /* Hide the hamburger button on larger screens */
-    }
-
+/* Mobile View */
+@media (max-width: 767px) {
+    /* Stack nav links vertically on mobile */
     .nav-links {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-links-container {
+        margin-top: 10px;
+    }
+}
+
+/* Larger Screens */
+@media (min-width: 768px) {
+    .nav-links {
+        gap: 90px; /* Increase gap between links on larger screens */
     }
 }
 
@@ -135,6 +102,7 @@ body {
 .hero {
     text-align: center;
     padding: 100px 20px;
+    margin-top: 50px;
 }
 
 .hero h1 {
@@ -142,7 +110,9 @@ body {
     color: #333;
     margin-bottom: 20px;
 }
-
+.hero h2 {
+    margin-bottom: 40px; /* Adjust the value as needed */
+}
 .content {
     display: flex;
     justify-content: center;
@@ -167,8 +137,7 @@ body {
     text-decoration: none;
     border-radius: 30px;
     border: 2px solid #333; 
-    margin-top: 10px;
-    font-size: 25px;
+    margin-top: 50px;
 }
 
 .pets {
@@ -537,7 +506,7 @@ bottom: 170px;
     flex-wrap: wrap;
     gap: 40px;
     margin-top: 50px;
-    padding: 20px;
+    padding: 30px;
     background-color: #FDF5E6;
     border-radius: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -547,7 +516,7 @@ bottom: 170px;
     background-color: #FFF;
     padding: 30px;
     border-radius: 15px;
-    width: 300px;
+    width: 250px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -656,6 +625,33 @@ bottom: 170px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
+.pet-card .gender-icon {
+    width: 30px; /* Adjust the width to make the icon smaller */
+    height: auto;
+    margin-top: 5px;
+}
+
+
+/* Styles for the 'Read Story' button */
+.more-info-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #FFB6C1; /* Light pink color */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.more-info-btn:hover {
+    background-color: #FF69B4; /* Hot pink color */
+    transform: scale(1.05);
+}
+
+
+
 
 .gender {
     font-size: 24px;
@@ -690,10 +686,9 @@ bottom: 170px;
 }
 
 .adopt-section h1 {
-    font-size: 70px;
+    font-size: 50px;
     margin-bottom: 50px;
-    /* make it left*/
-    text-align: left;
+
    
 }
 
@@ -707,11 +702,9 @@ bottom: 170px;
     display: flex;
     align-items: flex-start;
     max-width: 70%;
-    border: 2px solid #ddd;
+
     padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
     margin-bottom: 20px;
 }
 
@@ -755,11 +748,9 @@ bottom: 170px;
     display: flex;
     align-items: flex-start;
     max-width: 100%;
-    border: 2px solid #ddd;
+
     padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .neighbor {
@@ -808,19 +799,59 @@ bottom: 170px;
     right: 47%;
 }
 
-
 .rescue-section {
     display: flex;
     align-items: flex-start;
     max-width: 100%;
-    border: 2px solid #ddd;
+  
     padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+.rescue-content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.rescue-image {
+    flex: 1;
+    text-align: center;
+}
+
+.rescue-image img {
+    width: 70%;
+    height: 70%;
+
     border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.caution-message {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.rescue-steps {
+    flex: 2;
+    margin-left: 20px;
+}
+
+.rescue-steps ol {
+    list-style-type: decimal;
+    font-size: 20px;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.rescue-steps li {
+    margin-bottom: 15px;
 }
 
 
+ /* end of adopt.html */
 
 
 
@@ -978,7 +1009,7 @@ hr {
     display: flex;
     align-items: center;
     font-size: 28px; /* Ensures consistent font size */
-    color: #333; /* Ensures consistent color */
+    color: #333; 
     font-family: 'Jua', sans-serif;
 }
 
