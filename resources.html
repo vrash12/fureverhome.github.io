@@ -2,79 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - Fur-Ever Home</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    
     <nav class="navbar">
-        <ul class="nav-left nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" >About</a></li>
-            <li><a href="pets.html">Pets</a></li>
-        </ul>
         <div class="logo"></div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button> <!-- Hamburger button -->
-        <ul class="nav-right nav-links">
-            <li><a href="adopt.html">Adopt</a></li>
-            <li><a href="contact.html" >Contact</a></li>
-  
-        </ul>
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" >About</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="care.html">Care</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+            </ul>
+        </div>
     </nav>
     
     <section class="resources-section">
-        <h1>Resources for Adopting and Caring for Your Pet</h1>
-
-        
+        <h1>Other Resources for Adopting and Caring for Your Pet</h1>
+        <hr>
+        <!-- Pet Care Tips (PDF) -->
         <h2>Pet Care Tips (PDF)</h2>
         <div class="pdf-resources">
             <div class="pdf-resource">
-                <img src="images/dog-care-pdf.png" alt="Dog Care PDF" class="pdf-thumbnail">
-                <p><a href="pdfs/tips_on_basic_care.pdf" download>Download Dog.pdf</a></p>
+                <iframe src="pdfs/Basic_Commands.pdf" class="pdf-viewer" frameborder="0"></iframe>
+                <p>Dog Care Guide</p>
             </div>
             <div class="pdf-resource">
-                <img src="images/cat-care-pdf.png" alt="Cat Care PDF" class="pdf-thumbnail">
-                <p><a href="pdfs/caring_for_cat.pdf" download>Download Cat.pdf</a></p>
+                <iframe src="pdfs/Zoetis-Lifelong-Guide-CAT-ENG-.pdf" class="pdf-viewer" frameborder="0"></iframe>
+                <p>Cat Care Guide</p>
             </div>
         </div>
 
         <hr>
 
-        
+        <!-- Pet Care Tips (Video) -->
         <h2>Pet Care Tips (Video)</h2>
         <div class="video-resources">
             <div class="video-resource">
-                <a href="https://www.youtube.com/watch?v=Zb3Wzs2FcFE" target="_blank">
-                    <img src="images/dog-video-thumbnail.png" alt="Dog Care Video" class="video-thumbnail">
-                </a>
+                <iframe class="video-viewer" src="https://www.youtube.com/embed/Zb3Wzs2FcFE" frameborder="0" allowfullscreen></iframe>
                 <p>Basic Pet Care: Dogs</p>
-                <p><a href="https://www.youtube.com/watch?v=Zb3Wzs2FcFE" target="_blank">YouTube</a></p>
             </div>
             <div class="video-resource">
-                <a href="https://www.youtube.com/watch?v=tNu4-G0SmRU" target="_blank">
-                    <img src="images/cat-video-thumbnail.png" alt="Cat Care Video" class="video-thumbnail">
-                </a>
+                <iframe class="video-viewer" src="https://www.youtube.com/embed/tNu4-G0SmRU" frameborder="0" allowfullscreen></iframe>
                 <p>Basic Pet Care: Cats</p>
-                <p><a href="https://www.youtube.com/watch?v=tNu4-G0SmRU" target="_blank">YouTube</a></p>
             </div>
         </div>
 
         <hr>
 
-        
+        <!-- Frequently Asked Questions (FAQs) -->
         <h2>Frequently Asked Questions (FAQs)</h2>
         <div class="faq">
             <div class="faq-item">
-                <p><span class="faq-number">1</span> Can I adopt if I live in an apartment or small space? <span class="faq-toggle">V</span></p>
+                <div class="faq-question">
+                    <span class="faq-number">1</span> Can I adopt if I live in an apartment or small space?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Yes, many pets are suitable for apartment living. It's important to choose a pet that matches your living space and lifestyle. Consider adopting smaller breeds or pets that require less space and exercise.
+                    </p>
+                </div>
             </div>
             <div class="faq-item">
-                <p><span class="faq-number">2</span> What should I prepare before bringing my new pet home? <span class="faq-toggle">V</span></p>
+                <div class="faq-question">
+                    <span class="faq-number">2</span> What should I prepare before bringing my new pet home?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Before bringing your new pet home, ensure you have all the necessary supplies such as food, bowls, a bed, toys, and any other essentials. It's also important to pet-proof your home to keep them safe.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="faq-number">3</span> How do I introduce my new pet to existing pets in the household?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Introducing a new pet should be done gradually. Start by keeping them separated and allow them to get used to each other's scents. Slowly introduce them in a controlled environment and supervise their interactions.
+                    </p>
+                </div>
             </div>
         </div>
 
     </section>
+
+    <!-- Include JavaScript file -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>

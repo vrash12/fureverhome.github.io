@@ -7,23 +7,27 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="logo"></div>
-        <div class="nav-links-container">
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links-container mobile-menu">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="pets.html">Pets</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="pets.html" >Pets</a></li>
                 <li><a href="adopt.html">Adopt</a></li>
-                <li><a href="care.html">Care</a></li>
+                <li><a href="care.html" class="active">Care</a></li>
+                <li><a href="resources.html">Resources</a></li>
             </ul>
         </div>
     </nav>
-
+    
     <section class="care">
         <h1>Caring for Your New Pet</h1>
-
         <div class="care-section">
             <!-- Care Category 1: Feeding -->
             <div class="care-category">
@@ -34,7 +38,7 @@
                 
                     </h2>
                 </button>
-                <div class="content" id="feeding-content">
+                <div class="collapsible-content" id="feeding-content">
                     <div class="feeding-practices">
                         <div class="dog-feeding">
                             <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
@@ -71,43 +75,139 @@
             <div class="care-category">
                 <button class="collapsible" aria-expanded="false" aria-controls="exercise-content">
                     <h2 class="collapsible-title">
+                        <img src="images/icon/walk.png" alt="Walking" class="icon">
                         Exercise
-                        <span class="chevron">&#9660;</span> <!-- Down chevron -->
                     </h2>
                 </button>
-                <div class="content" id="exercise-content">
-                    <!-- Add your Exercise content here -->
-                    <p>Regular exercise is crucial for your pet's health. It helps maintain a healthy weight, strengthens muscles, and provides mental stimulation.</p>
+                <div class="collapsible-content" id="exercise-content">
+                    <div class="exercise-practices">
+                        <div class="dog-exercise">
+                            <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
+                            <h3>🏃‍♂️ Exercise for Dogs</h3>
+                            <ul>
+                                <li><strong>Daily Walks:</strong> Aim for at least 30 minutes to 2 hours of walking per day, depending on breed and age.</li>
+                                <li><strong>Playtime:</strong> Engage in activities like fetch, tug-of-war, or frisbee to keep your dog active and entertained.</li>
+                                <li><strong>Socialization:</strong> Visit dog parks to allow your dog to interact with other dogs and people.</li>
+                            </ul>
+                            <h3>❌ Exercise Cautions</h3>
+                            <ul>
+                                <li>Avoid over-exercising puppies; their bones are still developing.</li>
+                                <li>Don't exercise in extreme heat; dogs can overheat quickly.</li>
+                            </ul>
+                        </div>
+                
+                        <div class="cat-exercise">
+                            <img src="images/icon/cat.png" alt="Cat" class="icon-pets">
+                            <h3>🏃‍♂️ Exercise for Cats</h3>
+                            <ul>
+                                <li><strong>Interactive Toys:</strong> Use feather wands, laser pointers, or toy mice to stimulate hunting instincts.</li>
+                                <li><strong>Climbing Opportunities:</strong> Provide cat trees or shelves for climbing and exploring.</li>
+                                <li><strong>Play Sessions:</strong> Engage in short, frequent play sessions throughout the day.</li>
+                            </ul>
+                            <h3>❌ Exercise Cautions</h3>
+                            <ul>
+                                <li>Avoid using small objects that can be swallowed.</li>
+                                <li>Don't force your cat to exercise; let them initiate play.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
 
             <!-- Care Category 3: Grooming -->
             <div class="care-category">
                 <button class="collapsible" aria-expanded="false" aria-controls="grooming-content">
                     <h2 class="collapsible-title">
+                        <img src="images/icon/groom.png" alt="Grooming" class="icon">
                         Grooming
-                        <span class="chevron">&#9660;</span> <!-- Down chevron -->
                     </h2>
                 </button>
-                <div class="content" id="grooming-content">
-                    <!-- Add your Grooming content here -->
-                    <p>Proper grooming helps maintain your pet's hygiene, prevents matting, and reduces shedding. Regular brushing, bathing, and nail trimming are essential.</p>
+                <div class="collapsible-content" id="grooming-content">
+                    <div class="grooming-practices">
+                        <div class="dog-grooming">
+                            <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
+                            <h3>🛁 Grooming for Dogs</h3>
+                            <ul>
+                                <li><strong>Brushing:</strong> Brush your dog's coat 2-3 times a week to remove loose hair and prevent matting.</li>
+                                <li><strong>Bathing:</strong> Bathe your dog every 4-6 weeks using dog-friendly shampoo.</li>
+                                <li><strong>Nail Trimming:</strong> Trim nails monthly to prevent overgrowth and discomfort.</li>
+                                <li><strong>Ear Cleaning:</strong> Check and clean ears weekly to prevent infections.</li>
+                            </ul>
+                            <h3>❌ Grooming Cautions</h3>
+                            <ul>
+                                <li>Avoid using human shampoos; they can irritate your dog's skin.</li>
+                                <li>Don't cut nails too short; avoid the quick to prevent bleeding.</li>
+                            </ul>
+                        </div>
+                
+                        <div class="cat-grooming">
+                            <img src="images/icon/cat.png" alt="Cat" class="icon-pets">
+                            <h3>🛁 Grooming for Cats</h3>
+                            <ul>
+                                <li><strong>Brushing:</strong> Brush your cat's fur weekly; long-haired breeds may require daily brushing.</li>
+                                <li><strong>Nail Clipping:</strong> Trim nails every 2-3 weeks to prevent overgrowth and scratching.</li>
+                                <li><strong>Dental Care:</strong> Provide dental treats or brush teeth regularly to maintain oral health.</li>
+                                <li><strong>Eye Cleaning:</strong> Gently wipe eyes with a damp cloth to remove any discharge.</li>
+                            </ul>
+                            <h3>❌ Grooming Cautions</h3>
+                            <ul>
+                                <li>Avoid bathing unless necessary; cats are self-cleaning animals.</li>
+                                <li>Don't use cotton swabs in ears; use a vet-recommended solution for cleaning.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
 
-            <!-- Care Category 4: Health Care -->
-            <div class="care-category">
-                <button class="collapsible" aria-expanded="false" aria-controls="healthcare-content">
-                    <h2 class="collapsible-title">
-                        Health Care
-                        <span class="chevron">&#9660;</span> <!-- Down chevron -->
-                    </h2>
-                </button>
-                <div class="content" id="healthcare-content">
-                    <!-- Add your Health Care content here -->
-                    <p>Regular veterinary check-ups ensure your pet stays healthy. Vaccinations, dental care, and parasite control are vital components of your pet's health care.</p>
-                </div>
+<!-- Care Category 4: Health Care -->
+<div class="care-category">
+    <button class="collapsible" aria-expanded="false" aria-controls="healthcare-content">
+        <h2 class="collapsible-title">
+            <img src="images/icon/animal-care-.png" alt="Health" class="icon">
+            Health Care
+        </h2>
+    </button>
+    <div class="collapsible-content" id="healthcare-content">
+        <div class="healthcare-practices">
+            <div class="dog-healthcare">
+                <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
+                <h3>🩺 Health Care for Dogs</h3>
+                <ul>
+                    <li><strong>Regular Vet Check-ups:</strong> Visit the veterinarian at least once a year for a general health check and vaccinations.</li>
+                    <li><strong>Vaccinations:</strong> Keep vaccinations up-to-date to protect against diseases like rabies, distemper, and parvovirus.</li>
+                    <li><strong>Parasite Control:</strong> Use preventatives for fleas, ticks, and heartworms as recommended by your vet.</li>
+                    <li><strong>Dental Care:</strong> Brush your dog's teeth regularly and provide dental chews to maintain oral health.</li>
+                    <li><strong>Spaying/Neutering:</strong> Consider spaying or neutering to prevent unwanted litters and reduce certain health risks.</li>
+                </ul>
+                <h3>❌ Health Care Cautions</h3>
+                <ul>
+                    <li>Avoid self-medicating; always consult a veterinarian before giving any medication.</li>
+                    <li>Don't ignore signs of illness such as lethargy, loss of appetite, or behavioral changes.</li>
+                </ul>
             </div>
+
+            <div class="cat-healthcare">
+                <img src="images/icon/cat.png" alt="Cat" class="icon-pets">
+                <h3>🩺 Health Care for Cats</h3>
+                <ul>
+                    <li><strong>Regular Vet Check-ups:</strong> Schedule annual veterinary visits for health assessments and vaccinations.</li>
+                    <li><strong>Vaccinations:</strong> Keep your cat's vaccinations current to protect against diseases like feline leukemia and rabies.</li>
+                    <li><strong>Parasite Control:</strong> Use flea, tick, and worm preventatives as advised by your vet.</li>
+                    <li><strong>Dental Care:</strong> Provide dental treats and consider regular teeth cleaning to prevent dental issues.</li>
+                    <li><strong>Spaying/Neutering:</strong> Spay or neuter your cat to prevent overpopulation and reduce health risks.</li>
+                </ul>
+                <h3>❌ Health Care Cautions</h3>
+                <ul>
+                    <li>Avoid using dog medications for cats; some substances safe for dogs can be toxic to cats.</li>
+                    <li>Don't overlook changes in litter box habits, which can indicate health problems.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
         </div>
     </section>
 

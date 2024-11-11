@@ -12,10 +12,11 @@
         <div class="nav-links-container">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="pets.html">Pets</a></li>
+                <li><a href="about.html" >About</a></li>
+                <li><a href="pets.html" class="active">Pets</a></li>
                 <li><a href="adopt.html">Adopt</a></li>
                 <li><a href="care.html">Care</a></li>
+                <li><a href="resources.html">Resources</a></li>
             </ul>
         </div>
     </nav>
@@ -26,36 +27,24 @@
         <div class="category">
             <h2>MEOW MEOW!!!</h2>
             <div class="pet-cards-container">
-       
                 <div class="pet-cards">
+                    <!-- First Sample Pet Card -->
                     <div class="pet-card">
-                        <img src="images/pets images/bella.jpeg" alt="Mochi">
-                        <p>Mochi, 4 years old</p>
-                        <p>Puspin</p>
-                        <span class="gender female">♀</span>
+                        <img src="images/pets images/mingming.jpg" alt="Mingming">
+                        <p>Mingming, 2 years old</p>
+                        <p>Puspin (Pusang Pinoy)</p>
+                        <img src="images/icon/female 1.png" alt="Female" class="gender-icon">
+                        <button class="more-info-btn" onclick="openModal('mingming')">Read Story</button>
                     </div>
+                    <!-- Second Sample Pet Card -->
                     <div class="pet-card">
-                        <img src="images/pets images/simba.png" alt="Simba">
-                        <p>Simba, 3 years old</p>
-                        <p>Puspin</p>
+                        <img src="images/pets images/muning.jpg" alt="Muning">
+                        <p>Muning, 3 years old</p>
+                        <p>Bengal</p>
                         <span class="gender male">♂</span>
+                        <button class="more-info-btn" onclick="openModal('muning')">Read Story</button>
                     </div>
-                    <div class="pet-card">
-                        <img src="images/pets images/luna.png" alt="Luna">
-                        <p>Luna, 5 years old</p>
-                        <p>Siamese</p>
-                        <span class="gender female">♀</span>
-                    </div>
-                    <div class="pet-card">
-                        <img src="images/pets images/teddy.png" alt="Teddy">
-                        <p>Teddy, 3 years old</p>
-                        <p>Puspin</p>
-                        <span class="gender male">♂</span>
-                    </div>
-                    
-                
                 </div>
-         
             </div>
         </div>
 
@@ -64,44 +53,70 @@
         <div class="category">
             <h2>ARF ARF!!!</h2>
             <div class="pet-cards-container">
-           
                 <div class="pet-cards">
+                    <!-- Existing pet cards -->
                     <div class="pet-card">
                         <img src="images/pets images/buddy.jpg" alt="Buddy">
                         <p>Buddy, 3 years old</p>
                         <p>Golden Retriever</p>
                         <span class="gender male">♂</span>
                     </div>
-                <!-- Inside your pet-card divs, add the button element -->
-                <div class="pet-card">
-                    <img src="images/pets images/bella.jpeg" alt="Bella">
-                    <p>Bella, 4 years old</p>
-                    <p>Labraador Retriever</p>
-               <!-- Replace the span with an img tag -->
-<img src="images/icon/female 1.png" alt="Female" class="gender-icon">
-
-                    <button class="more-info-btn" onclick="location.href='success-stories/bella.html'">Read Story</button>
-                </div>
-
                     <div class="pet-card">
-                        <img src="images/pets images/rocky.jpeg" alt="Rocky">
-                        <p>Rocky, 2 years old</p>
-                        <p>German Shepherd</p>
-                        <span class="gender male">♂</span>
+                        <img src="images/pets files/luck1.jpg" alt="Lucky">
+                        <p>Lucky, 2 years old</p>
+                        <p>Aspin</p>
+                        <img src="images/icon/female 1.png" alt="Female" class="gender-icon">
+                        <button class="more-info-btn" onclick="openModal('lucky')">Read Story</button>
                     </div>
-                    <div class="pet-card">
-                        <img src="images/pets images/lily.jpg" alt="Lily">
-                        <p>Lily, 1 year old</p>
-                        <p>Poodle</p>
-                        <span class="gender female">♀</span>
-                    </div>
-            
                 </div>
-      
             </div>
         </div>
-        
     </section>
+
+    <!-- Mingming Modal -->
+    <div id="mingming-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('mingming')">&times;</span>
+            <h2>Mingming's Adoption Story</h2>
+            <div class="story-content">
+                <img src="images/pets images/mingming.jpg" alt="Mingming" class="story-pet-img">
+                <img src="images/pets images/owner/mingming_owner.jpg" alt="Mingming's Owner" class="story-owner-img">
+                <p>
+                    Mingming was rescued from the streets of Manila. She was malnourished and needed immediate care. After weeks of rehabilitation at our shelter, she found a loving home with the Dela Cruz family. Now, she spends her days napping in sunny spots and playing with her favorite yarn ball.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Muning Modal -->
+    <div id="muning-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('muning')">&times;</span>
+            <h2>Muning's Adoption Story</h2>
+            <div class="story-content">
+                <img src="images/pets images/muning.jpg" alt="Muning" class="story-pet-img">
+                <img src="images/pets images/owner/muning_owner.jpg" alt="Muning's Owner" class="story-owner-img">
+                <p>
+                    Muning was found after Typhoon Odette, scared and alone. He was brought to our shelter where he slowly regained trust in humans. The Santos family opened their hearts to Muning, giving him a forever home where he's cherished and adored.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Existing Lucky Modal -->
+    <div id="lucky-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('lucky')">&times;</span>
+            <h2>Lucky's Adoption Story</h2>
+            <div class="story-content">
+                <img src="images/pets files/luck1.jpg" alt="Lucky" class="story-pet-img">
+                <img src="images/pets files/owner/Lucky.jpg" alt="Lucky's Owner" class="story-owner-img">
+                <p>
+                    Lucky was found wandering the streets of Cebu, weak and hungry. After being nursed back to health, she was adopted by the Garcia family. She now enjoys playing fetch and bringing joy to her new family every day.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 
