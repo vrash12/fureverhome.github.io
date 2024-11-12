@@ -188,21 +188,30 @@ body {
 }
 
 .text {
-    max-width: 400px;
-    text-align: center;
+    max-width: 50%;
+  
     margin-top: -200px;
     margin-bottom: 50px; 
+
+}
+
+.text h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+        /* justify the text*/
+    text-align: justify;
 }
 
 
 
 .btn {
-    padding: 20px 30px;
+
+    padding: 30px 50px;
     background-color: #FFE100;
     text-decoration: none;
     border-radius: 30px;
     border: 2px solid #333; 
-    margin-top: 50px;
+    font-size: 30px;
 }
 
 .pets {
@@ -386,43 +395,44 @@ bottom: 170px;
 .about-us {
     text-align: center;
     padding: 50px 20px;
-    position: absolute;
+
 }
+
+
 
 /* Talk Bubble Styles */
 .talk-bubble-about {
     display: inline-block;
-    position: absolute;
-    width: 150px;
+    width: 80px;
     opacity: 0;
     animation: fadeIn 1.5s forwards;
-    top: 4%;
-    left: 19%;
-
+    transform: translateY(-150px); /* Move upwards by 50px */
+    margin-right: -180px; /* Add margin if needed */
 }
+
 
 .bubble-tail-left-about {
     position: absolute;
     width: 0;
     height: 0;
-    left: 20px;
-    bottom: -40px;
-    margin-bottom: 21px;
+    left: 16px;
     border: 10px solid;
     border-color: #000000 transparent transparent #000000;
-    transform: rotate(11deg); /* Optional: Add a slight rotation */
+    transform: rotate(2deg); /* Optional: Add a slight rotation */
 }
 
 .about-us h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 66px;
+    margin-bottom: 50px;
 }
+
 
 .about-content {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 
@@ -600,26 +610,52 @@ bottom: 170px;
 
 .mission-vision {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 50px;
+    flex-direction: column; /* Stack header and content vertically */
+    align-items: center;
     padding: 30px;
     background-color: #FDF5E6;
     border-radius: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.mission-vision-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mission-vision h1 {
+    font-size: 53px;
+margin: 0;
+ 
+    text-align: center;
+}
+
+.mission-vision-logo {
+    width: 50px; /* Adjust as needed */
+    height: auto;
+    margin-right: 15px;
+}
+
+.mission-vision-content {
+    display: flex;
+    justify-content: space-around; /* Distribute space around items */
+    align-items: flex-start; /* Align items to the start vertically */
+    width: 100%;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Optional: Add gap between boxes */
+}
+
 .mission, .vision {
     background-color: #FFF;
     padding: 30px;
     border-radius: 15px;
-    width: 250px;
+    width: 30%;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 90px;
+    border: 4px solid #000000;
 }
-
 .mission:hover, .vision:hover {
     transform: scale(1.05);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -631,13 +667,13 @@ bottom: 170px;
 }
 
 .mission h3, .vision h3 {
-    font-size: 26px;
+    font-size: 46px;
     margin-bottom: 15px;
     color: #444;
 }
 
 .mission p, .vision p {
-    font-size: 18px;
+    font-size: 28px;
     text-align: justify;
     line-height: 1.8;
     color: #555;
@@ -688,7 +724,7 @@ bottom: 170px;
 
 /* Pet Cards Layout */
 .pet-cards-container {
-    width: 70%;
+    width: 60%;
     margin: auto;
 
 
@@ -719,10 +755,10 @@ bottom: 170px;
 }
 
 .pet-card img {
-    width: 100px;
-    height: 100px;
+    width: 50%;
+    height: 60%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10%;
     margin-bottom: 10px;
 }
 .pet-card .gender-icon {
@@ -736,9 +772,9 @@ bottom: 170px;
 .more-info-btn {
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #FFB6C1; /* Light pink color */
-    color: #fff;
-    border: none;
+    background-color: #FFFFE0;/* Light pink color */
+    color: #000000;
+    border: 2px solid #000000;
     border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
@@ -746,7 +782,7 @@ bottom: 170px;
 }
 
 .more-info-btn:hover {
-    background-color: #FF69B4; /* Hot pink color */
+    background-color: #2da63f; /* Hot pink color */
     transform: scale(1.05);
 }
 
@@ -779,6 +815,12 @@ bottom: 170px;
     position: relative;
 }
 
+.modal h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .close-btn {
     color: #aaa;
     position: absolute;
@@ -804,8 +846,8 @@ bottom: 170px;
 
 .story-pet-img,
 .story-owner-img {
-    width: 200px;
-    height: 200px;
+    width: 40%;
+    height: 80%px;
     object-fit: cover;
     border-radius: 10px;
     margin: 10px;
@@ -929,8 +971,14 @@ bottom: 170px;
 
 
 
+
 .step-content {
     flex: 1;
+ 
+}
+
+.step-content h1 {
+    text-align: left;
 }
 
 
@@ -941,21 +989,24 @@ bottom: 170px;
   
     margin: 0;
     line-height: 1.6;
-
+    margin-left: 30px;
 }
 
 .map-container {
     display: flex;
-    flex-wrap: wrap; /* Allows maps to wrap on smaller screens */
-    justify-content: center; /* Centers the maps horizontally */
-    gap: 50px; /* Adds space between the maps */
+    flex-direction: row; /* Stack items vertically */
+    gap: 50px;
     padding: 20px 0;
     position: relative;
+    margin: auto;
+    width: 80%;
+    align-items: center; /* Center items horizontally */
 }
 
+
 .map-item {
-    flex: 1 1 300px; /* Allows the maps to grow and shrink, with a minimum width of 300px */
-    max-width: 600px; /* Ensures maps don't get too large on very wide screens */
+    width: 100%;
+    max-width: 600px;
     text-align: center;
 }
 
@@ -991,9 +1042,9 @@ bottom: 170px;
 
 .neighbor img
 {
-    width: 90%;
-    height: 80%;
-    object-fit: cover;
+    width:40%;
+    height: 70%;
+
     border-radius: 10px;
 }
 .neighbor-div .bubble-tail-left {
@@ -1004,35 +1055,37 @@ bottom: 170px;
     bottom: -33px;
     margin-bottom: 21px;
     border: 10px solid;
-    border-color: #000000 transparent transparent #000000;
+    border-color: #ffffff transparent transparent #ffffff;
     transform: rotate(20deg); 
 }
 
 .neighbor-div .talk-bubble {
     background-color: white;
-    margin-bottom: 300px;
-    right: 42%;
+    top: 40%;
+    right: 48%;
+    border: 5px solid #ffffff;
 }
 
 
 .neighbor-div .talk-bubble1 {
     position: absolute;
+    width: 150px;
+    /*color white*/
     background-color: white;
-    margin-bottom: 200px;
-    right: 33px;
-
+    margin-bottom: 18%;
+    right: 30%;
+    border: 5px solid #ffffff;
 }
 
 .neighbor-div .bubble-tail-left1 {
     position: absolute;
     width: 0;
     height: 0;
-    right: 60px;
-    bottom: -23px;
-    margin-bottom: 21px;
+ left: 12%;
+    bottom: -17px;
     border: 10px solid;
-    border-color: #000000 transparent transparent #000000;
-    transform: rotate(20deg); 
+    border-color: #ffffff transparent transparent #ffffff;
+    transform: rotate(13deg); 
 }
 
 .rescue-section {
@@ -1048,18 +1101,21 @@ bottom: 170px;
 .rescue-content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: center;
     margin-top: 20px;
 }
 
 .rescue-image {
     flex: 1;
     text-align: center;
+  
 }
 
 .rescue-image img {
-    width: 70%;
-    height: 80%;
-
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000000;
     border-radius: 10px;
 }
 
@@ -1076,14 +1132,25 @@ bottom: 170px;
 }
 
 .rescue-steps ol {
-    list-style-type: decimal;
-    font-size: 20px;
-    line-height: 1.6;
-    padding-left: 20px;
+    list-style: none; /* Remove default list styling */
+    padding: 0;
 }
-
 .rescue-steps li {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    background-color: #FFFFE0; /* White background for each step */
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    border: 2px solid #000000;
+}
+.rescue-steps li:hover {
+    background-color: #e6f7ff; /* Light blue on hover */
+}
+.rescue-steps li p {
+    margin: 0;
+    line-height: 1.5;
 }
 
 

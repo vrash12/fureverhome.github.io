@@ -30,18 +30,18 @@
                 <div class="pet-cards">
                     <!-- First Sample Pet Card -->
                     <div class="pet-card">
-                        <img src="images/pets images/mingming.jpg" alt="Mingming">
+                        <img src="images/pets files/mingming.jpg" alt="Mingming">
                         <p>Mingming, 2 years old</p>
                         <p>Puspin (Pusang Pinoy)</p>
-                        <img src="images/icon/female 1.png" alt="Female" class="gender-icon">
+                 
                         <button class="more-info-btn" onclick="openModal('mingming')">Read Story</button>
                     </div>
                     <!-- Second Sample Pet Card -->
                     <div class="pet-card">
-                        <img src="images/pets images/muning.jpg" alt="Muning">
+                        <img src="images/pets files/mungming.png" alt="Muning">
                         <p>Muning, 3 years old</p>
                         <p>Bengal</p>
-                        <span class="gender male">♂</span>
+            
                         <button class="more-info-btn" onclick="openModal('muning')">Read Story</button>
                     </div>
                 </div>
@@ -54,18 +54,20 @@
             <h2>ARF ARF!!!</h2>
             <div class="pet-cards-container">
                 <div class="pet-cards">
-                    <!-- Existing pet cards -->
+                    <!-- Millie's pet card with Read Story button -->
                     <div class="pet-card">
-                        <img src="images/pets images/buddy.jpg" alt="Buddy">
-                        <p>Buddy, 3 years old</p>
-                        <p>Golden Retriever</p>
-                        <span class="gender male">♂</span>
+                        <img src="images/pets files/millie.jpg" alt="Millie">
+                        <p>Millie, 2 year old</p>
+                        <p>American Boxer</p>
+                   
+                        <button class="more-info-btn" onclick="openModal('millie')">Read Story</button>
                     </div>
+                    <!-- Lucky's pet card -->
                     <div class="pet-card">
                         <img src="images/pets files/luck1.jpg" alt="Lucky">
                         <p>Lucky, 2 years old</p>
-                        <p>Aspin</p>
-                        <img src="images/icon/female 1.png" alt="Female" class="gender-icon">
+                        <p>Aspin (Asong Pinoy)</p>
+             
                         <button class="more-info-btn" onclick="openModal('lucky')">Read Story</button>
                     </div>
                 </div>
@@ -79,8 +81,8 @@
             <span class="close-btn" onclick="closeModal('mingming')">&times;</span>
             <h2>Mingming's Adoption Story</h2>
             <div class="story-content">
-                <img src="images/pets images/mingming.jpg" alt="Mingming" class="story-pet-img">
-                <img src="images/pets images/owner/mingming_owner.jpg" alt="Mingming's Owner" class="story-owner-img">
+                <img src="images/pets files/mingming.jpg" alt="Mingming" class="story-pet-img">
+                <img src="images/pets files/owner/ming.jpg" alt="Mingming's Owner" class="story-owner-img">
                 <p>
                     Mingming was rescued from the streets of Manila. She was malnourished and needed immediate care. After weeks of rehabilitation at our shelter, she found a loving home with the Dela Cruz family. Now, she spends her days napping in sunny spots and playing with her favorite yarn ball.
                 </p>
@@ -94,8 +96,8 @@
             <span class="close-btn" onclick="closeModal('muning')">&times;</span>
             <h2>Muning's Adoption Story</h2>
             <div class="story-content">
-                <img src="images/pets images/muning.jpg" alt="Muning" class="story-pet-img">
-                <img src="images/pets images/owner/muning_owner.jpg" alt="Muning's Owner" class="story-owner-img">
+                <img src="images/pets files/mungming.png" alt="Muning" class="story-pet-img">
+                <img src="images/pets files/owner/mungming.PNG" alt="Muning's Owner" class="story-owner-img">
                 <p>
                     Muning was found after Typhoon Odette, scared and alone. He was brought to our shelter where he slowly regained trust in humans. The Santos family opened their hearts to Muning, giving him a forever home where he's cherished and adored.
                 </p>
@@ -103,7 +105,7 @@
         </div>
     </div>
 
-    <!-- Existing Lucky Modal -->
+    <!-- Lucky Modal -->
     <div id="lucky-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('lucky')">&times;</span>
@@ -113,6 +115,21 @@
                 <img src="images/pets files/owner/Lucky.jpg" alt="Lucky's Owner" class="story-owner-img">
                 <p>
                     Lucky was found wandering the streets of Cebu, weak and hungry. After being nursed back to health, she was adopted by the Garcia family. She now enjoys playing fetch and bringing joy to her new family every day.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Millie Modal -->
+    <div id="millie-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('millie')">&times;</span>
+            <h2>Millie's Adoption Story</h2>
+            <div class="story-content">
+                <img src="images/pets files/millie.jpg" alt="Millie" class="story-pet-img">
+                <img src="images/pets files/owner/millie owner.jpg" alt="Millie's Owner" class="story-owner-img">
+                <p>
+                    Millie was abandoned in a local park and found by one of our volunteers. She was shy and scared at first but soon warmed up to the staff and other pets at the shelter. After a few months, she found her forever home with the Johnson family, where she now spends her days playing with her new siblings and enjoying long walks.
                 </p>
             </div>
         </div>
