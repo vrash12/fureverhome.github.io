@@ -176,7 +176,7 @@ body {
     margin-bottom: 20px;
 }
 .hero h2 {
-    margin-bottom: 40px; /* Adjust the value as needed */
+    margin-bottom: 70px; /* Adjust the value as needed */
 }
 .content {
     display: flex;
@@ -212,6 +212,7 @@ body {
     border-radius: 30px;
     border: 2px solid #333; 
     font-size: 30px;
+  
 }
 
 .pets {
@@ -567,14 +568,14 @@ bottom: 170px;
 }
 
 .team-description h2 {
-    font-size: 32px;
+    font-size: 50px;
     margin-bottom: 20px;
     display: inline-flex; /* Use inline-flex for better control of alignment */
     align-items: center; /* Align the icon and text vertically */
 }
 
 .team-icon {
-    width: 30px; /* Adjust size to fit well beside the text */
+    width: 60px; /* Adjust size to fit well beside the text */
     height: auto;
     margin-right: 5px; /* Add space between icon and text */
     vertical-align: middle; /* Ensure vertical alignment with text */
@@ -943,7 +944,7 @@ margin: 0;
 .adoption-center {
     display: flex;
     align-items: flex-start;
-    max-width: 70%;
+    max-width: 100%;
 
     padding: 20px;
 
@@ -1252,7 +1253,7 @@ hr {
 }
 
 .care h1 {
-    font-size: 36px;
+    font-size: 56px;
     color: #333;
     margin-bottom: 20px;
 }
@@ -1634,7 +1635,7 @@ hr {
 .resources-section h1 {
     text-align: center;
     margin-bottom: 40px;
-    font-size: 36px;
+    font-size: 56px;
     color: #333;
 }
 
@@ -1718,7 +1719,7 @@ hr {
 .faq-question {
     cursor: pointer;
     padding: 15px;
-    font-size: 20px;
+    font-size: 40px;
     position: relative;
     background-color: #FFF2C1;
     border-radius: 5px;
@@ -1741,6 +1742,12 @@ hr {
     overflow: hidden;
     transition: max-height 0.3s ease;
     padding: 0 15px;
+ 
+}
+
+.faq-answer p {
+    font-size: 48px;
+    line-height: 1.6;
 }
 
 .faq-item.active .faq-answer {
