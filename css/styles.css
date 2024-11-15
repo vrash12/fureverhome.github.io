@@ -399,6 +399,12 @@ bottom: 170px;
 
 }
 
+.about-us  h2 {
+    text-align: center;
+    padding: 50px 20px;
+
+}
+
 
 
 /* Talk Bubble Styles */
@@ -509,38 +515,8 @@ bottom: 170px;
 }
 
 
-.pet-name {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #FFFFE0;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #000;
-    color: #333;
-    font-size: 14px;
-    width: 60px;
-    text-align: center;
-}
 
-.pet-img {
-    display: none;
-    position: absolute;
-    top: 110px; /* Position the pet image below the team member */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #000;
-}
 
-.team-member:hover .pet-name, .team-member:hover .pet-img {
-    display: block;
-    transition: all 0.3s ease;
-}
 
 /* Optionally, apply hover effect to change the image's border color */
 .team-member:hover img.team-img {
@@ -570,15 +546,15 @@ bottom: 170px;
 .team-description h2 {
     font-size: 50px;
     margin-bottom: 20px;
-    display: inline-flex; /* Use inline-flex for better control of alignment */
-    align-items: center; /* Align the icon and text vertically */
+    display: inline-flex; 
+    align-items: center; 
 }
 
 .team-icon {
-    width: 60px; /* Adjust size to fit well beside the text */
+    width: 60px; 
     height: auto;
-    margin-right: 5px; /* Add space between icon and text */
-    vertical-align: middle; /* Ensure vertical alignment with text */
+    margin-right: 5px; 
+    vertical-align: middle; 
     margin-bottom: 15px;
 }
 
@@ -611,7 +587,7 @@ bottom: 170px;
 
 .mission-vision {
     display: flex;
-    flex-direction: column; /* Stack header and content vertically */
+    flex-direction: column;
     align-items: center;
     padding: 30px;
     background-color: #FDF5E6;
@@ -640,11 +616,11 @@ margin: 0;
 
 .mission-vision-content {
     display: flex;
-    justify-content: space-around; /* Distribute space around items */
-    align-items: flex-start; /* Align items to the start vertically */
+    justify-content: space-around;
+    align-items: flex-start; 
     width: 100%;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 20px; /* Optional: Add gap between boxes */
+    flex-wrap: wrap;
+    gap: 20px; 
 }
 
 .mission, .vision {
@@ -763,17 +739,17 @@ margin: 0;
     margin-bottom: 10px;
 }
 .pet-card .gender-icon {
-    width: 30px; /* Adjust the width to make the icon smaller */
+    width: 30px; 
     height: auto;
     margin-top: 5px;
 }
 
 
-/* Styles for the 'Read Story' button */
+
 .more-info-btn {
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #FFFFE0;/* Light pink color */
+    background-color: #FFFFE0;
     color: #000000;
     border: 2px solid #000000;
     border-radius: 20px;
@@ -791,7 +767,7 @@ margin: 0;
     font-size: 24px;
 }
 
-/* ... (existing styles) ... */
+
 
 /* Modal Styles */
 .modal {
@@ -1236,9 +1212,18 @@ hr {
 }
 /* care.html */
 .care {
-    padding: 40px 20px;
+    padding: 70px 20px;
     text-align: center;
 }
+
+.care ul {
+/* justify */
+    text-align: left;
+    margin-left: 20px;
+   
+}
+
+
 
 .icon {
     max-width: 50px;
@@ -1265,7 +1250,7 @@ hr {
     margin-top: 30px;
 }
 
-/* Care Category Styles */
+
 .care-category {
     padding: 20px;
     border: 2px solid #C3B091;
@@ -1274,7 +1259,7 @@ hr {
 }
 
 .care-category h2 {
-    font-size: 28px;
+
     margin-bottom: 15px;
     color: #333;
 }
@@ -1283,7 +1268,7 @@ hr {
     background-color: #FFF2C1;
     cursor: pointer;
     padding: 8px;
-    width: 100%;
+    width: 19%;
     border: none;
     text-align: center;
     outline: none;
@@ -1295,6 +1280,7 @@ hr {
     margin: 0 auto;
     border: 2px solid black;
     margin-bottom: 20px;
+ 
 }
 
 .collapsible-content {
@@ -1318,7 +1304,7 @@ hr {
 .collapsible .collapsible-title {
     display: flex;
     align-items: center;
-    font-size: 28px;
+    font-size: 45px;
     color: #333;
     font-family: 'Jua', sans-serif;
 }
@@ -1336,7 +1322,7 @@ hr {
 
 .dog-feeding, .dog-exercise, .dog-grooming, .dog-healthcare {
     width: 100%;
-    max-width: 450px;
+    max-width: 30%;
     background-color: #FFF2C1;
     padding: 20px;
     border-radius: 20px;
@@ -1347,7 +1333,7 @@ hr {
 
 .cat-feeding, .cat-exercise, .cat-grooming, .cat-healthcare {
     width: 100%;
-    max-width: 450px;
+    max-width: 30%;
     background-color: #DBCC95;
     padding: 20px;
     border-radius: 20px;
@@ -1377,7 +1363,7 @@ hr {
 .dog-exercise li, .cat-exercise li,
 .dog-grooming li, .cat-grooming li,
 .dog-healthcare li, .cat-healthcare li {
-    font-size: 18px;
+    font-size: 30px;
     color: #333;
     margin-bottom: 8px;
 }
