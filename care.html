@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caring for Your New Pet - Fur-Ever Home</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Include the 'Jua' font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo"></div>
-        <button class="hamburger" aria-label="Toggle navigation">
+        <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
@@ -18,7 +20,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="pets.html" >Pets</a></li>
+                <li><a href="pets.html">Pets</a></li>
                 <li><a href="adopt.html">Adopt</a></li>
                 <li><a href="care.html" class="active">Care</a></li>
                 <li><a href="resources.html">Resources</a></li>
@@ -28,17 +30,40 @@
     
     <section class="care">
         <h1>Caring for Your New Pet</h1>
+        <h2>Click each boxes to find out on how to care more for your pets!🐶🐱</h2>
+        
+        <!-- Collapsible Buttons Container -->
+        <div class="collapsible-buttons-container">
+            <button class="collapsible" aria-expanded="false" aria-controls="feeding-content">
+                <h2 class="collapsible-title">
+                    <img src="images/icon/pet-food.png" alt="Food Bowl" class="icon">
+                    Feeding
+                </h2>
+            </button>
+            <button class="collapsible" aria-expanded="false" aria-controls="exercise-content">
+                <h2 class="collapsible-title">
+                    <img src="images/icon/walk.png" alt="Walking" class="icon">
+                    Exercise
+                </h2>
+            </button>
+            <button class="collapsible" aria-expanded="false" aria-controls="grooming-content">
+                <h2 class="collapsible-title">
+                    <img src="images/icon/groom.png" alt="Grooming" class="icon">
+                    Grooming
+                </h2>
+            </button>
+            <button class="collapsible" aria-expanded="false" aria-controls="healthcare-content">
+                <h2 class="collapsible-title">
+                    <img src="images/icon/animal-care-.png" alt="Health" class="icon">
+                    Health Care
+                </h2>
+            </button>
+        </div>
+
         <div class="care-section">
             <!-- Care Category 1: Feeding -->
-            <div class="care-category">
-                <button class="collapsible" aria-expanded="false" aria-controls="feeding-content">
-                    <h2 class="collapsible-title">
-                        <img src="images/icon/pet-food.png" alt="Food Bowl" class="icon">
-                        Feeding
-                
-                    </h2>
-                </button>
-                <div class="collapsible-content" id="feeding-content">
+            <div class="care-category" id="feeding-content">
+                <div class="collapsible-content">
                     <div class="feeding-practices">
                         <div class="dog-feeding">
                             <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
@@ -72,14 +97,8 @@
             </div>
 
             <!-- Care Category 2: Exercise -->
-            <div class="care-category">
-                <button class="collapsible" aria-expanded="false" aria-controls="exercise-content">
-                    <h2 class="collapsible-title">
-                        <img src="images/icon/walk.png" alt="Walking" class="icon">
-                        Exercise
-                    </h2>
-                </button>
-                <div class="collapsible-content" id="exercise-content">
+            <div class="care-category" id="exercise-content">
+                <div class="collapsible-content">
                     <div class="exercise-practices">
                         <div class="dog-exercise">
                             <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
@@ -112,18 +131,11 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
 
             <!-- Care Category 3: Grooming -->
-            <div class="care-category">
-                <button class="collapsible" aria-expanded="false" aria-controls="grooming-content">
-                    <h2 class="collapsible-title">
-                        <img src="images/icon/groom.png" alt="Grooming" class="icon">
-                        Grooming
-                    </h2>
-                </button>
-                <div class="collapsible-content" id="grooming-content">
+            <div class="care-category" id="grooming-content">
+                <div class="collapsible-content">
                     <div class="grooming-practices">
                         <div class="dog-grooming">
                             <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
@@ -158,56 +170,48 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
 
-<!-- Care Category 4: Health Care -->
-<div class="care-category">
-    <button class="collapsible" aria-expanded="false" aria-controls="healthcare-content">
-        <h2 class="collapsible-title">
-            <img src="images/icon/animal-care-.png" alt="Health" class="icon">
-            Health Care
-        </h2>
-    </button>
-    <div class="collapsible-content" id="healthcare-content">
-        <div class="healthcare-practices">
-            <div class="dog-healthcare">
-                <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
-                <h2>🩺 Health Care for Dogs</h2>
-                <ul>
-                    <li><strong>Regular Vet Check-ups:</strong> Visit the veterinarian at least once a year for a general health check and vaccinations.</li>
-                    <li><strong>Vaccinations:</strong> Keep vaccinations up-to-date to protect against diseases like rabies, distemper, and parvovirus.</li>
-                    <li><strong>Parasite Control:</strong> Use preventatives for fleas, ticks, and heartworms as recommended by your vet.</li>
-                    <li><strong>Dental Care:</strong> Brush your dog's teeth regularly and provide dental chews to maintain oral health.</li>
-                    <li><strong>Spaying/Neutering:</strong> Consider spaying or neutering to prevent unwanted litters and reduce certain health risks.</li>
-                </ul>
-                <h2>❌ Health Care Cautions</h2>
-                <ul>
-                    <li>Avoid self-medicating; always consult a veterinarian before giving any medication.</li>
-                    <li>Don't ignore signs of illness such as lethargy, loss of appetite, or behavioral changes.</li>
-                </ul>
-            </div>
+            <!-- Care Category 4: Health Care -->
+            <div class="care-category" id="healthcare-content">
+                <div class="collapsible-content">
+                    <div class="healthcare-practices">
+                        <div class="dog-healthcare">
+                            <img src="images/icon/dog.png" alt="Dog" class="icon-pets">
+                            <h2>🩺 Health Care for Dogs</h2>
+                            <ul>
+                                <li><strong>Regular Vet Check-ups:</strong> Visit the veterinarian at least once a year for a general health check and vaccinations.</li>
+                                <li><strong>Vaccinations:</strong> Keep vaccinations up-to-date to protect against diseases like rabies, distemper, and parvovirus.</li>
+                                <li><strong>Parasite Control:</strong> Use preventatives for fleas, ticks, and heartworms as recommended by your vet.</li>
+                                <li><strong>Dental Care:</strong> Brush your dog's teeth regularly and provide dental chews to maintain oral health.</li>
+                                <li><strong>Spaying/Neutering:</strong> Consider spaying or neutering to prevent unwanted litters and reduce certain health risks.</li>
+                            </ul>
+                            <h2>❌ Health Care Cautions</h2>
+                            <ul>
+                                <li>Avoid self-medicating; always consult a veterinarian before giving any medication.</li>
+                                <li>Don't ignore signs of illness such as lethargy, loss of appetite, or behavioral changes.</li>
+                            </ul>
+                        </div>
 
-            <div class="cat-healthcare">
-                <img src="images/icon/cat.png" alt="Cat" class="icon-pets">
-                <h2>🩺 Health Care for Cats</h2>
-                <ul>
-                    <li><strong>Regular Vet Check-ups:</strong> Schedule annual veterinary visits for health assessments and vaccinations.</li>
-                    <li><strong>Vaccinations:</strong> Keep your cat's vaccinations current to protect against diseases like feline leukemia and rabies.</li>
-                    <li><strong>Parasite Control:</strong> Use flea, tick, and worm preventatives as advised by your vet.</li>
-                    <li><strong>Dental Care:</strong> Provide dental treats and consider regular teeth cleaning to prevent dental issues.</li>
-                    <li><strong>Spaying/Neutering:</strong> Spay or neuter your cat to prevent overpopulation and reduce health risks.</li>
-                </ul>
-                <h2>❌ Health Care Cautions</h2>
-                <ul>
-                    <li>Avoid using dog medications for cats; some substances safe for dogs can be toxic to cats.</li>
-                    <li>Don't overlook changes in litter box habits, which can indicate health problems.</li>
-                </ul>
+                        <div class="cat-healthcare">
+                            <img src="images/icon/cat.png" alt="Cat" class="icon-pets">
+                            <h2>🩺 Health Care for Cats</h2>
+                            <ul>
+                                <li><strong>Regular Vet Check-ups:</strong> Schedule annual veterinary visits for health assessments and vaccinations.</li>
+                                <li><strong>Vaccinations:</strong> Keep your cat's vaccinations current to protect against diseases like feline leukemia and rabies.</li>
+                                <li><strong>Parasite Control:</strong> Use flea, tick, and worm preventatives as advised by your vet.</li>
+                                <li><strong>Dental Care:</strong> Provide dental treats and consider regular teeth cleaning to prevent dental issues.</li>
+                                <li><strong>Spaying/Neutering:</strong> Spay or neuter your cat to prevent overpopulation and reduce health risks.</li>
+                            </ul>
+                            <h2>❌ Health Care Cautions</h2>
+                            <ul>
+                                <li>Avoid using dog medications for cats; some substances safe for dogs can be toxic to cats.</li>
+                                <li>Don't overlook changes in litter box habits, which can indicate health problems.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-
         </div>
     </section>
 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Fur-Ever Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Include the 'Jua' font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"></div>
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="care.html">Care</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Contact Us Section -->
+        <section class="contact-us">
+            <h1>Contact Us</h1>
+            <!-- Contact Form Container -->
+            <div class="contact-form-container">
+                <!-- Left Column -->
+                <div class="contact-left">
+                    <h2>Have questions? Want to know more about adopting a pet?
+                        Reach out to us through any of the methods below, and we will get back to you as soon as possible!</h2>
+
+                    <!-- Operating Hours Section -->
+                    <div class="contact-box operating-hours-box">
+                        <div class="contact-icon">
+                            <img src="images/icon/circular-wall-clock-for-livingroom 1.png" alt="Clock Icon">
+                            <h2>Operating Hours</h2>
+                        </div>
+                        <p>We are open during the following hours:</p>
+                        <ul class="operating-hours">
+                            <li>Tuesday - Friday: Not Responsive</li>
+                            <li>Saturday & Monday: 8 am - 5 pm</li>
+                            <li>Sunday: Closed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column (Contact Form Box) -->
+                <div class="contact-form-box">
+                    <div class="contact-icon">
+                        <img src="images/icon/contact-book 1.png" alt="Form Icon">
+                        <h2>Get in Touch</h2>
+                    </div>
+                    <form action="#" method="post" class="contact-form">
+                        <div class="form-group">
+                            <label for="fullname">Full Name*</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message/Inquiry*</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Other Contact Methods -->
+            <div class="contact-container">
+                <!-- Reach Us Through Section -->
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <img src="images/icon/email.png" alt="Email Icon">
+                        <h2>Reach Us Through</h2>
+                    </div>
+                    <p>You can reach us through the following email addresses:</p>
+                    <ul class="email-addresses">
+                        <li><a href="mailto:info@fur-everhome.org">info@fur-everhome.org</a></li>
+                        <li><a href="mailto:adoptions@fur-everhome.org">adoptions@fur-everhome.org</a></li>
+                        <li><a href="mailto:volunteer@fur-everhome.org">volunteer@fur-everhome.org</a></li>
+                    </ul>
+                </div>
+                <!-- Visit Us Section -->
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <img src="images/icon/map 1.png" alt="Map Icon">
+                        <h2>Visit Us</h2>
+                    </div>
+                    <p>Come and visit us at our organization mini headquarters!</p>
+                    <!-- Map embedding -->
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d807.6044983374287!2d120.63160336890041!3d15.664356800059386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1731876690408!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include your main.js script for the hamburger menu functionality -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -9,14 +9,20 @@
 <body>
     <nav class="navbar">
         <div class="logo"></div>
+        <button class="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <div class="nav-links-container">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" >About</a></li>
-                <li><a href="pets.html" class="active">Pets</a></li>
+                <li><a href="pets.html">Pets</a></li>
                 <li><a href="adopt.html">Adopt</a></li>
                 <li><a href="care.html">Care</a></li>
                 <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                
             </ul>
         </div>
     </nav>
@@ -38,12 +44,15 @@
                     </div>
                     <!-- Second Sample Pet Card -->
                     <div class="pet-card">
-                        <img src="images/pets files/mungming.png" alt="Muning">
+                        <div class="pet-images">
+                            <img src="images/pets-files/muning.jpg" alt="Muning" class="pet-image">
+                            <img src="images/pets-files/owner/muning-owner.jpg" alt="Muning's Owner" class="owner-image">
+                        </div>
                         <p>Muning, 3 years old</p>
                         <p>Orange Tabby</p>
-            
-                        <button class="more-info-btn" onclick="openModal('muning')">Read Story</button>
+                        <a href="#" class="read-story-link" onclick="openModal('muning')">Read Story</a>
                     </div>
+                    
                 </div>
             </div>
         </div>
