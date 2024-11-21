@@ -7,7 +7,15 @@
 
 body {
     font-family: 'Jua', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 /* Navbar Styling */
 .navbar {
     background-color: #FFFFE0;
@@ -212,7 +220,7 @@ body {
 }
 .hero h2 {
     margin-bottom: 70px; /* Adjust the value as needed */
-    margin-right: 25%;
+
 }
 .content {
     display: flex;
@@ -389,6 +397,16 @@ bottom: 170px;
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+
+    .text {
+        max-width: 100%;
+        margin-bottom: 60px;
+ 
+    
+    }
+    .content {
+    position: relative;
+    }
     .navbar {
         flex-direction: column;
         text-align: center;
@@ -401,28 +419,25 @@ bottom: 170px;
     }
 
     .hero h1 {
-        font-size: 24px;
+        font-size: 55px !important;
+        margin-bottom: 50px !important;
+        width: 100% !important;
+        text-align: left;
     }
 
     .text p {
         font-size: 16px;
     }
+
+    .pets {
+        margin-top: 120px;
+        margin-left: 0;
+    }
+
+
+    
 }
 
-@media (max-width: 480px) {
-    .navbar {
-        padding: 15px;
-        font-size: 16px;
-    }
-
-    .btn {
-        padding: 10px 20px;
-    }
-
-    .content {
-        gap: 10px;
-    }
-}
 
 
  /* end of index.html*/
@@ -625,7 +640,7 @@ bottom: 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px;
+    padding: 120px;
     background-color: #FDF5E6;
     border-radius: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -793,23 +808,26 @@ margin: 0;
 }
 .read-story-link {
     display: none;
-    position: absolute;
+
     bottom: 10px;
+    margin-top: 20px;
     left: 0;
     right: 0;
     text-align: center;
-    font-size: 16px;
+    font-size: 36px;
     color: #000;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5px;
     border-radius: 10px;
     transition: opacity 0.3s ease;
+    border: 2px black;
 }
 
 .pet-card:hover .read-story-link {
     display: block;
     opacity: 1;
+    color: #2da63f;
 }
 /* On hover, hide the pet image */
 .pet-card:hover .pet-image {
@@ -845,76 +863,155 @@ margin: 0;
 
 
 
-
-
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 100; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto; /* Centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    border-radius: 10px;
-    position: relative;
-}
-
-.modal h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
+.pet-story {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
     text-align: center;
 }
 
-.close-btn {
-    color: #aaa;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+.story-header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.pet-info {
+    font-size: 20px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.decorative-divider {
+    width: 150px;
+    height: 4px;
+    background-color: #FFC107;
+    margin: 20px auto 40px auto;
 }
 
 .story-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.pet-images {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
 }
 
 .story-pet-img,
 .story-owner-img {
-    width: 40%;
-    height: 80%px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
     margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.story-content p {
+.story-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.story-text p {
     font-size: 18px;
-    text-align: center;
-    margin-top: 15px;
+    line-height: 1.8;
+    color: #555;
 }
 
+.testimonial {
+    background-color: #FFF8E1;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 15px;
+    max-width: 600px;
+    font-style: italic;
+    color: #555;
+}
 
+.testimonial .owner-name {
+    text-align: right;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.call-to-action {
+    background-color: #FFC107;
+    padding: 90px;
+    margin: 90px 0;
+    text-align: center;
+    border-radius: 15px;
+    color: #fff;
+  
+}
+
+.call-to-action h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.call-to-action p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: #FFC107;
+    padding: 35px 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 28px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    top: 20px;
+
+}
+
+.cta-button:hover {
+    background-color: #FFA000;
+    color: #fff;
+}
+
+.back-button {
+    display: inline-block;
+    left: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #FFC107;
+    padding: 20px 30px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #FFA000;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .story-content {
+        flex-direction: column;
+    }
+
+    .story-text {
+        padding: 0;
+        text-align: center;
+    }
+
+    .story-text p {
+        font-size: 16px;
+    }
+
+    .story-header h1 {
+        font-size: 36px;
+    }
+}
 /* end of pets.html */
 
 /* Health Care Practices Section */
@@ -1292,6 +1389,7 @@ hr {
 .care {
     padding: 70px 20px;
     text-align: center;
+    flex-grow: 1;
 }
 
 .care h1 {
@@ -1347,8 +1445,8 @@ hr {
 }
 .care-category h2 {
 
-    margin-bottom: 15px;
-    color: #333;
+    margin-bottom: 20px;
+    color: #b91515;
 }
 
 .collapsible-buttons-container {
@@ -1570,16 +1668,21 @@ hr {
 .contact-left h2 {
     font-size: 38px;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 }
 
 .contact-left .operating-hours-box {
     background-color: #FFF2C1;
-    padding: 20px;
+    padding: 70px;
     border-radius: 15px;
     text-align: left;
     border: 3px solid #000000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-left .operating-hours-box h2 {
+    font-size: 58px;
+    margin: 0;
 }
 
 .contact-left .operating-hours-box .contact-icon {
@@ -1624,8 +1727,8 @@ hr {
 }
 
 .contact-form-box h2 {
-    font-size: 32px;
-    margin: 0;
+    font-size: 50px;
+    
 }
 
 .contact-form {
@@ -1931,5 +2034,141 @@ hr {
 @media (max-width: 768px) {
     .pdf-resource, .video-resource {
         width: 100%;
+    }
+}
+
+
+/* footer */
+/* Footer Styles */
+.site-footer {
+    background-color: #FFFFE0; /* Matches your navbar background */
+    padding: 9px 20px;
+    border-top: 2px solid #000000;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 20px;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-logo {
+    width: 80px;
+    height: 80px;
+    background-image: url('../images/logo.png'); /* Replace with your logo path */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 15px;
+}
+
+.footer-tagline {
+    font-size: 18px;
+    color: #333;
+}
+
+.footer-right h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.footer-right p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.footer-right a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: #C3B091;
+}
+
+.footer-right .contact-icon {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.social-media {
+    margin-top: 15px;
+}
+
+.social-media a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+}
+
+.footer-bottom p {
+    font-size: 16px;
+    color: #777;
+}
+
+@media (max-width: 767px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* Center the footer logo */
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        margin: 0; /* Remove any side margins */
+    }
+
+    .social-media {
+        text-align: center;
     }
 }
