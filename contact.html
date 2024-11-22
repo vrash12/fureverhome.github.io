@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <title>Contact Us - Fur-Ever Home</title>
     <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Include the 'Jua' font -->
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo"></div>
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </a>
         <button class="hamburger" onclick="toggleMobileMenu()">
             <span></span>
             <span></span>
@@ -22,11 +25,12 @@
                 <li><a href="adopt.html">Adopt</a></li>
                 <li><a href="care.html">Care</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li><a href="contact.html"  class="active">Contact Us</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
+
 
     <main>
         <!-- Contact Us Section -->
@@ -39,19 +43,47 @@
                     <h2>Have questions? Want to know more about adopting a pet?
                         Reach out to us through any of the methods below, and we will get back to you as soon as possible!</h2>
 
-                    <!-- Operating Hours Section -->
-                    <div class="contact-box operating-hours-box">
-                        <div class="contact-icon">
-                            <img src="images/icon/circular-wall-clock-for-livingroom 1.png" alt="Clock Icon">
-                            <h2>Operating Hours</h2>
+                    <!-- Contact Boxes Container -->
+                    <div class="contact-boxes-container">
+                        <!-- Operating Hours Box -->
+                        <div class="contact-box operating-hours-box">
+                            <div class="contact-icon">
+                                <img src="images/icon/circular-wall-clock-for-livingroom 1.png" alt="Clock Icon">
+                                <h2>Operating Hours</h2>
+                            </div>
+                            <p>We are open during the following hours:</p>
+                            <ul class="operating-hours">
+                                <li>Tuesday - Friday: Not Responsive</li>
+                                <li>Saturday & Monday: 8 am - 5 pm</li>
+                                <li>Sunday: Closed</li>
+                            </ul>
                         </div>
-                        <p>We are open during the following hours:</p>
-                        <ul class="operating-hours">
-                            <li>Tuesday - Friday: Not Responsive</li>
-                            <li>Saturday & Monday: 8 am - 5 pm</li>
-                            <li>Sunday: Closed</li>
-                        </ul>
-                    </div>
+                        <!-- Reach Us Through Box -->
+                        <div class="contact-box">
+                            <div class="contact-icon">
+                                <img src="images/icon/email.png" alt="Email Icon">
+                                <h2>Reach Us Through</h2>
+                            </div>
+                            <p>You can reach us through the following email addresses:</p>
+                            <ul class="email-addresses">
+                                <li><a href="mailto:info@fur-everhome.org">info@fur-everhome.org</a></li>
+                                <li><a href="mailto:adoptions@fur-everhome.org">adoptions@fur-everhome.org</a></li>
+                                <li><a href="mailto:volunteer@fur-everhome.org">volunteer@fur-everhome.org</a></li>
+                            </ul>
+                        </div>
+                        <!-- Visit Us Box -->
+                        <div class="contact-box">
+                            <div class="contact-icon">
+                                <img src="images/icon/map 1.png" alt="Map Icon">
+                                <h2>Visit Us</h2>
+                            </div>
+                            <p>Come and visit us at our organization mini headquarters!</p>
+                            <!-- Map embedding -->
+                            <div class="map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d807.6044983374287!2d120.63160336890041!3d15.664356800059386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1731876690408!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div> <!-- End of Contact Boxes Container -->
                 </div>
 
                 <!-- Right Column (Contact Form Box) -->
@@ -82,36 +114,9 @@
                 </div>
             </div>
 
-            <!-- Other Contact Methods -->
-            <div class="contact-container">
-                <!-- Reach Us Through Section -->
-                <div class="contact-box">
-                    <div class="contact-icon">
-                        <img src="images/icon/email.png" alt="Email Icon">
-                        <h2>Reach Us Through</h2>
-                    </div>
-                    <p>You can reach us through the following email addresses:</p>
-                    <ul class="email-addresses">
-                        <li><a href="mailto:info@fur-everhome.org">info@fur-everhome.org</a></li>
-                        <li><a href="mailto:adoptions@fur-everhome.org">adoptions@fur-everhome.org</a></li>
-                        <li><a href="mailto:volunteer@fur-everhome.org">volunteer@fur-everhome.org</a></li>
-                    </ul>
-                </div>
-                <!-- Visit Us Section -->
-                <div class="contact-box">
-                    <div class="contact-icon">
-                        <img src="images/icon/map 1.png" alt="Map Icon">
-                        <h2>Visit Us</h2>
-                    </div>
-                    <p>Come and visit us at our organization mini headquarters!</p>
-                    <!-- Map embedding -->
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d807.6044983374287!2d120.63160336890041!3d15.664356800059386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1731876690408!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
+
 
     <footer class="site-footer">
         <div class="footer-content">

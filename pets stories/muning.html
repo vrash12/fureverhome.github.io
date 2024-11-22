@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muning's Adoption Story - Fur-Ever Home</title>
+
     <link rel="stylesheet" href="../css/styles.css">
     <!-- Include Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo"></div>
+        <a href="index.html" class="logo">
+            <img src="../images/logo.png" alt="Logo">
+        </a>
         <button class="hamburger" onclick="toggleMobileMenu()">
             <span></span>
             <span></span>
@@ -29,6 +33,7 @@
     </nav>
 
     <section class="pet-story">
+        <a href="../pets.html" class="back-button">← Back to Pets</a>
         <div class="story-header">
             <h1>Muning's Adoption Story</h1>
             <p class="pet-info">3 years old | Orange Tabby</p>
@@ -54,7 +59,7 @@
             <p>There are many more pets looking for a loving home.</p>
             <a href="../adopt.html" class="cta-button">Adopt a Pet Today</a>
         </div>
-        <a href="../pets.html" class="back-button">← Back to Pets</a>
+     
     </section>
 
     <footer class="site-footer">
@@ -78,5 +83,6 @@
             <p>&copy; 2023 Fur-Ever Home. All Rights Reserved.</p>
         </div>
     </footer>
+    <script src="../js/main.js"></script>
 </body>
 </html>

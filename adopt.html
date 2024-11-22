@@ -8,9 +8,10 @@
  
 </head>
 <body>
-
     <nav class="navbar">
-        <div class="logo"></div>
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </a>
         <button class="hamburger" onclick="toggleMobileMenu()">
             <span></span>
             <span></span>
@@ -18,13 +19,13 @@
         </button>
         <div class="nav-links-container">
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" >Home</a></li>
                 <li><a href="pets.html">Pets</a></li>
                 <li><a href="adopt.html" class="active">Adopt</a></li>
                 <li><a href="care.html">Care</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="contact.html" >Contact Us</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html" >About</a></li>
             </ul>
         </div>
     </nav>
@@ -69,26 +70,26 @@
                 <p class="step-description">
                     Talk to your kapitbahays or local community members who might have pets that need a new home. You may find the perfect pet right next door.
                 </p>
-                <div class="neighbor"> 
-                    <img src="images/pets images/neighbor.jpg" alt="neighbor">
-                    <div class="talk-bubble tri-right border round btm-left-in">
-                        <div class="talktext">
-                            <p>Bos gusto mo ampunin bagong anak naming aso?</p>
+                <div class="neighbor">
+                    <div class="neighbor-image-container">
+                        <img src="images/pets images/neighbor.jpg" alt="neighbor">
+                        <!-- First Talk Bubble -->
+                        <div class="talk-bubble-adopt" id="bubble1">
+                            <div class="talktext">
+                                <p>Bos gusto mo ampunin bagong anak naming aso?</p>
+                            </div>
                         </div>
-                        <div class="bubble-tail-left"></div>
-                    </div>
-
-                    <div class="talk-bubble1 tri-right border round btm-left-in">
-                        <div class="talktext">
-                            <p>Sige boss, thank you!</p>
+                        <!-- Second Talk Bubble -->
+                        <div class="talk-bubble-adopt" id="bubble2">
+                            <div class="talktext">
+                                <p>Sige boss, thank you!</p>
+                            </div>
                         </div>
-                        <div class="bubble-tail-left1"></div>
                     </div>
-                
-                
                 </div>
             </div>
         </div>
+        
         <hr>
         <div class="rescue-section">
             <div class="step-number">3</div>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Millie's Adoption Story - Fur-Ever Home</title>
     <link rel="stylesheet" href="../css/styles.css">
     <!-- Include Google Fonts -->
@@ -9,7 +10,9 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo"></div>
+        <a href="index.html" class="logo">
+            <img src="../images/logo.png" alt="Logo">
+        </a>
         <button class="hamburger" onclick="toggleMobileMenu()">
             <span></span>
             <span></span>
@@ -27,8 +30,8 @@
             </ul>
         </div>
     </nav>
-
     <section class="pet-story">
+        <a href="../pets.html" class="back-button">← Back to Pets</a>
         <div class="story-header">
             <h1>Millie's Adoption Story</h1>
             <p class="pet-info">2 years old | American Boxer</p>
@@ -78,5 +81,6 @@
             <p>&copy; 2023 Fur-Ever Home. All Rights Reserved.</p>
         </div>
     </footer>
+    <script src="../js/main.js"></script>
 </body>
 </html>

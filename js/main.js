@@ -23,13 +23,12 @@ window.onclick = function(event) {
 }
 
 
-// JavaScript to toggle the mobile menu
 function toggleMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
     const navLinksContainer = document.querySelector('.nav-links-container');
+    const hamburger = document.querySelector('.hamburger');
 
-    hamburger.classList.toggle('active');
     navLinksContainer.classList.toggle('active');
+    hamburger.classList.toggle('active');
 }
 
 
