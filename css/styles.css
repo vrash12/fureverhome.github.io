@@ -187,11 +187,16 @@ main {
 
     .hamburger {
         display: flex;
-        margin-right: 0;
+        margin-left: 89%;
+        margin-top: -90px;
+
+        
     }
 
     .logo {
-        margin-left: 0;
+        margin-right: 80%;
+        margin-bottom: 40px;
+   
     }
    
 }
@@ -489,10 +494,15 @@ bottom: 170px;
         margin-right: 10px;
     }
 
+    .hero h2 {
+        margin-top: -350px; /* Adjust as necessary */
+    }
+
 
     .text h1 {
         font-size: 32px;
         text-align: center;
+        margin-top: 50px;
     }
 
     /* Adjust the .btn */
@@ -504,21 +514,17 @@ bottom: 170px;
     /* Adjust the .pets */
     .pets {
         flex-direction: row;
-        margin-top: 300px;
-     
+        margin-top: 340px;
+    
     }
 
     /* Adjust pet images */
     .pets img {
-        width: 140px;
+        width: 200px;
         height: auto;
     }
 
-    /* Adjust speech bubbles */
-    .talk-bubble {
-        width: 140px;
-    }
-
+   
   
 
     #dogCatContainer .talk-bubble {
@@ -533,39 +539,52 @@ bottom: 170px;
         width: 80px;
     }
     #dog1 .talk-bubble {
-        top: -90px;
-        right: -10px;
-        width: 80px;
+        top: -30px;
+    
+        width: 110px;
     }
     #dog1 {
-    
+     
         transform: rotate(-20deg);
-        right: -30px;
-        top:-170px;
-  
-
+        right: -50px;
+        top:-210px;
 
     }
-
+    #dog1 .bubble-tail-left
+    {
+       margin-bottom:   23px;
+        transform: rotate(20deg); /* Optional: Add a slight rotation */
+    }
 
     #dogCatContainer {
-        right: 10px;
-        bottom: 190px;
+        right: 35px;
+        bottom: 250px;
+        top: -230px;
     }
 
     #cat1 {
-        left: 115px;
+        left: 120px;
   
-        height: 200px;
+        height: 270px;
+        bottom: 250px;
     }
 
-  
+    #dogCatContainer .bubble-tail-right
+    {
+       margin-bottom:   24px;
+       transform: rotate(-13deg);  /* Optional: Add a slight rotation */
+    }
 
-    /* Adjust .hero h2 */
+    #cat1 img {
+        width: 150px;
+    
+    }
+
     .hero h2 {
-        font-size: 16px;
-        margin: 10px;
+        font-size: 25px;
+        margin: -270px 30px 20px; /* Adjust the top margin as needed */
     }
+    
 
     /* Adjust .content */
     .content {
@@ -581,20 +600,20 @@ bottom: 170px;
         font-size: 32px !important;
     }
 
-    /* Adjust the .text h1 */
+
     .text h1 {
         font-size: 24px;
     }
 
-    /* Adjust the .btn */
+
     .btn {
         padding: 15px 25px;
         font-size: 18px;
     }
 
-    /* Adjust pet images */
+
     .pets img {
-        width: 120px;
+        width: 200px;
     }
 
     /* Adjust speech bubbles */
@@ -604,87 +623,49 @@ bottom: 170px;
 
     /* Adjust speech bubble positions */
     #dog1 .talk-bubble {
-        top: -60px;
+        top: -30px;
         left: 70px;
     }
 
     #dogCatContainer .talk-bubble {
         top: -160px;
-        left: -120px;
+        left: -80px;
     }
+
+    #dogCatContainer {
+        right: 50px;
+        bottom: 20px;
+    } 
 
     #cat1 .talk-bubble {
-        top: -25px;
-        right: -50px;
+        top: -85px;
+        left: 60px;
     }
 
-    /* Adjust .hero h2 */
-    .hero h2 {
-        font-size: 14px;
-        margin: 10px;
+    #cat1 {
+        right: 0;
+       
     }
 
-    /* Adjust .content */
-    .content {
-        margin-top: 20px;
+    #dog1 {
+        left: 70px;
+        top: -200px;
     }
-}
+  
 
-/* Responsive Adjustments for screens 320px and below */
-@media (max-width: 320px) {
-
-    /* Further adjust the .hero h1 font size */
-    .hero h1 {
-        font-size: 24px !important;
-    }
-
-    /* Adjust the .text h1 */
-    .text h1 {
-        font-size: 18px;
-    }
-
-    /* Adjust the .btn */
     .btn {
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 15px 25px;
+        font-size: 18px;
+        position: relative;
+        bottom: 10px;
     }
 
-    /* Adjust pet images */
-    .pets img {
-        width: 100px;
-    }
 
-    /* Adjust speech bubbles */
-    .talk-bubble {
-        width: 80px;
-    }
+    
+    
+    
 
-    /* Adjust speech bubble positions */
-    #dog1 .talk-bubble {
-        top: -10px;
-        left: 30px;
-    }
-
-    #dogCatContainer .talk-bubble {
-        top: -70px;
-        left: -40px;
-    }
-
-    #cat1 .talk-bubble {
-        top: -20px;
-        right: -40px;
-    }
-
-    /* Adjust .hero h2 */
-    .hero h2 {
-        font-size: 12px;
-        margin: 10px;
-    }
-
-    /* Adjust .content */
-    .content {
-        margin-top: 15px;
-    }
+  
 }
 
 
@@ -931,12 +912,56 @@ bottom: 170px;
     font-weight: bold;
     font-style: italic;
 }
+/* Existing CSS above... */
+@media (max-width: 1700px) {
+    .about-us h1 {
+        margin-bottom: 100px;
+    }
+}
 
-/* Responsive Design for Meet Our Team Section */
+
+@media (max-width: 1550px) and (min-width: 769px) {
+    /* Adjust team-description */
+    .team-description {
+        width: 100%; /* Expand to full width */
+        flex-direction: row; /* Change to row to align icon and heading horizontally */
+        justify-content: center; /* Center the content */
+        align-items: center; /* Vertically center */
+        text-align: center; /* Center text */
+        margin-bottom: 40px; /* Add spacing below */
+    }
+
+    .team-description h2 {
+        font-size: 40px; /* Adjust font size */
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    .team-icon {
+        width: 50px;
+        margin-right: 10px;
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+    .mission-vision-logo {
+        top: -50px;
+        margin-top: -100px;
+    }
+
+    .mission-vision {
+        padding: 10px;
+    }
+
+    
+
+}
+
 @media (max-width: 768px) {
     .team-section {
         flex-direction: column;
         text-align: center;
+    }
+
+    .about-us h1 {
+        margin-bottom: 100px;
     }
 
     .team {
@@ -961,11 +986,64 @@ bottom: 170px;
         width: 80%;
         margin: 20px 0;
     }
+    .mission-vision-logo {
+        top: -50px;
+        margin-top: -100px;
+    }
 }
 
-@media (max-width: 1400px) {
-    .team-description h2 {
-        font-size: 40px;
+@media (max-width: 500px) {
+    /* Adjustments for screens 500px and below */
+
+    /* General adjustments */
+    .about-us {
+        padding: 30px 10px;
+    }
+
+    .about-us h1 {
+        font-size: 50px;
+        margin-bottom: 30px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-logo {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 18px;
+        padding: 0 10px;
+        text-align: justify;
+    }
+
+    /* Talk Bubble Adjustments */
+    .talk-bubble-about {
+        width: 60px;
+        transform: translateY(-100px);
+        margin-right: 0;
+    }
+
+    .bubble-tail-left-about {
+        left: 12px;
+        border-width: 8px;
+    }
+
+    .talktext p {
+        font-size: 14px;
+    }
+
+    /* Team Section Adjustments */
+    .team-section {
+        padding: 10px;
+    }
+
+    .team-member {
+        max-width: 100px;
     }
 
     .team-member img.team-img {
@@ -975,11 +1053,27 @@ bottom: 170px;
 
     .team-member p {
         font-size: 14px;
-        padding: 5px;
+        top: 80px;
+        width: 80%;
+    }
+
+    .team-description h2 {
+        font-size: 36px;
+    }
+
+    .team-icon {
+        width: 50px;
+        margin-bottom: 10px;
     }
 
     .team-description p {
         font-size: 16px;
+        padding: 0 10px;
+    }
+
+    /* Mission and Vision Section Adjustments */
+    .mission-vision {
+        padding: 40px 20px;
     }
 
     .mission-vision h1 {
@@ -988,25 +1082,137 @@ bottom: 170px;
 
     .mission-vision-logo {
         width: 40px;
+        margin-right: 10px;
     }
 
     .mission-vision-content {
-        gap: 10px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .mission, .vision {
+        width: 90%;
+        margin: 20px 0;
         padding: 20px;
     }
 
     .mission h3, .vision h3 {
-        font-size: 36px;
+        font-size: 32px;
+    }
+
+    .mission-icon, .vision-icon {
+        width: 40px;
+        margin-bottom: 10px;
     }
 
     .mission p, .vision p {
-        font-size: 24px;
+        font-size: 18px;
+        text-align: justify;
     }
 }
 
+@media (max-width: 400px) {
+    /* Adjustments for screens 400px and below */
+
+    /* General adjustments */
+    .about-us {
+        padding: 50px 10px;
+    }
+
+    .about-us h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .about-logo {
+        width: 150px;
+        margin-bottom: 15px;
+    }
+
+    /* Talk Bubble Adjustments */
+    .talk-bubble-about {
+        width: 50px;
+        transform: translateY(-1px);
+    }
+
+    .bubble-tail-left-about {
+        left: 14px;
+        border-width: px;
+    }
+
+    .talktext p {
+        font-size: 12px;
+    }
+
+    /* Team Section Adjustments */
+    .team-member {
+        max-width: 80px;
+    }
+
+    .team-member img.team-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-member p {
+        font-size: 12px;
+        top: 60px;
+        width: 70%;
+    }
+
+    .team-description h2 {
+        font-size: 28px;
+    }
+
+    .team-icon {
+        width: 40px;
+   
+    }
+
+    .team-description p {
+        font-size: 14px;
+    }
+
+    /* Mission and Vision Section Adjustments */
+    .mission-vision {
+        padding: 4px 4px 2px 1px;
+    }
+
+    .mission-vision h1 {
+        font-size: 32px;
+    }
+
+    .mission-vision-logo {
+        width: 30px;
+        margin-right: 8px;
+        margin-top: -20px;
+    }
+
+    .mission, .vision {
+        width: 70%;
+        margin: 15px 0;
+        padding: 15px;
+    }
+
+    .mission h3, .vision h3 {
+        font-size: 24px;
+    }
+
+    .mission-icon, .vision-icon {
+        width: 30px;
+        margin-bottom: 8px;
+    }
+
+    .mission p, .vision p {
+        font-size: 16px;
+        text-align: justify;
+    }
+}
 
 
 /* end of about.html */
@@ -1301,6 +1507,29 @@ bottom: 170px;
     .story-header h1 {
         font-size: 46px;
     }
+
+  
+}
+
+@media (max-width: 400px) {
+    .pet-card img
+    {
+        width: 100%;
+    }
+    .call-to-action {
+        padding: 40px;
+    }
+
+.cta-button
+{
+    padding: 20px 30px;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+    
+    
+  
+}
 }
 /* end of pets.html */
 
@@ -1749,8 +1978,15 @@ top: -10%;
         max-width: 80%;
     }
 
-    /* Adjust positions of talk bubbles */
-  
+    #bubble1 {
+        top: -50px;    /* Adjust this value */
+        left: 70px;    /* Adjust this value */
+    }
+
+    #bubble2 {
+        bottom: 50px;  /* Adjust this value */
+        right: 15px;   /* Adjust this value */
+    }
 
  /* end of adopt.html */
 
