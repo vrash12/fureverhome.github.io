@@ -1425,9 +1425,10 @@ main {
 }
 
 .adopt-section h2 {
+    margin-top: 20px;
     font-size: 28px;
     color: #333;
-    margin-bottom: 120px;
+    margin-bottom: 70px;
 }
 
 .adoption-center {
